@@ -25,7 +25,7 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req,r
     lastName,
     email,
     hasedPassword
-  }
+  } = req.body
   await User.build({username, firstname, lastName, email, hasedPassword})
   const validatorErrors = validationResult(req)
 
