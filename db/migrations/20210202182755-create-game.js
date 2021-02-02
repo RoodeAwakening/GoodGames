@@ -22,15 +22,18 @@ module.exports = {
       },
       publisherId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: "Publishers" }
       },
       consoleId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: "Consoles" }
       },
       genreId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: "Genres" }
       },
       maxPlayers: {
         allowNull: false,
