@@ -1,12 +1,17 @@
-extends layout.pug
-
-block content
+html
+  head
+    title="GoodGames"
+    link(rel='stylesheet' href='/stylesheets/sign-log.css')
+  body
     form(action='/signup' method='post')
         input(type='hidden' name='_csrf' method='post' value=csrfToken)
-        input(type='text' name='username' value=user.username class='signup-field' placeholder='Enter Username' required)
-        input(type='text' name='firstName' value=user.firstName class='signup-field' placeholder='First Name' required)
-        input(type='text' name='lastName' value=user.lastName class='signup-field' placeholder='Last Name' required)
-        input(type='email' name='email' value=user.email class='signup-field' placeholder='Email' required)
-        input(type='password' name='password' class='signup-field' placeholder='Password' required)
-        input(type='password' name='confirmPassword' class='signup-field' placeholder='Confirm Password' required)
-        button(type='submit' class='submit-button') Sign Up
+        div(class="main")
+            p(class="sign" align="center") Signup
+                div(class='sign')
+                    input(type='text' name='username' value=user.username class='un' placeholder='Enter Username' required)
+                    input(type='text' name='firstName' value=user.firstName class='un' placeholder='First Name' required)
+                    input(type='text' name='lastName' value=user.lastName class='un' placeholder='Last Name' required)
+                    input(type='email' name='email' value=user.email class='un' placeholder='Email' required)
+                    input(type='password' name='password' class='un' placeholder='Password' required)
+                    input(type='password' name='confirmPassword' class='un' placeholder='Confirm Password' required)
+                    button(type='submit' class='submit') Sign Up

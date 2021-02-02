@@ -21,7 +21,7 @@ const loginValidators = [
 ];
 
 router.post("/", csrfProtection, loginValidators, asyncHandler(async (req, res) => {
-  const { emailAddress, hashedPassword } = req.body;
+  const { email, password } = req.body;
 
   req.session.user = user;
 
@@ -29,7 +29,7 @@ router.post("/", csrfProtection, loginValidators, asyncHandler(async (req, res) 
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
-    const user = await db.User.findOne({ where: { emailAddress } });
+    const user = await db.User.findOne({ where: { email } });
 
     if (user !== null) {
       const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString());
@@ -46,7 +46,7 @@ router.post("/", csrfProtection, loginValidators, asyncHandler(async (req, res) 
 
   res.render('login', {
     title: 'Login',
-    emailAddress,
+    email,
     errors,
     csrfToken: req.csrfToken(),
   })
