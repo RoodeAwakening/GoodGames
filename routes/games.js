@@ -11,7 +11,7 @@ router.get('/', asyncHandler(async(req,res) => {
 
 router.get('/:id', asyncHandler(async(req,res) => {
     const gameId = req.params.id
-    const game = await db.Game.byPk(gameId)
+    const game = await db.Game.findByPk(gameId)
     res.render('game-detail', {game})
 }))
 
