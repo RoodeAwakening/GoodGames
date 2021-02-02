@@ -1,14 +1,14 @@
 html
   head
     title="GoodGames"
-    link(rel='stylesheet' href='/stylesheets/sign-log.css')
+    link(rel='stylesheet' href='/stylesheets/log-in.css')
   body
-    form(action='/signup' method='post')
+    form(action='/login' method='post')
         input(type='hidden' name='_csrf' method='post' value=csrfToken)
         div(class="main")
             p(class="sign" align="center") Login
                 div(class="sign")
                     input(type='text' name='username' class='un' placeholder='Enter Username' required)
                     input(type='email' name='email' class='un' placeholder='Email' required)
-                    input(type='password' class='un' placeholder='Password' required)
+                    input(type='password' name='password' class='un' placeholder='Password' required)
                     button(type='submit' class='submit') Login

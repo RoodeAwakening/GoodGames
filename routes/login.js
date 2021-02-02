@@ -3,7 +3,9 @@ const { check, validationResult } = require('express-validator');
 const router = express.Router();
 
 const db = require('../db/models');
+const bcrypt = require('bcryptjs')
 const { csrfProtection, asyncHandler } = require('./utils');
+const { loginUser } = require('../auth');
 
 /* GET users listing. */
 router.get('/', csrfProtection, asyncHandler(async (req, res)=> {
@@ -12,7 +14,7 @@ router.get('/', csrfProtection, asyncHandler(async (req, res)=> {
 );
 
 const loginValidators = [
-  check('emailAddress')
+  check('email')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Email Address'),
   check('password')
@@ -23,18 +25,19 @@ const loginValidators = [
 router.post("/", csrfProtection, loginValidators, asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  req.session.user = user;
-
   let errors = [];
   const validatorErrors = validationResult(req);
-
+  
   if (validatorErrors.isEmpty()) {
     const user = await db.User.findOne({ where: { email } });
 
     if (user !== null) {
       const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString());
+      
       if (passwordMatch) {
-        return res.redirect('/');
+        loginUser(req, res, user);
+        return res.redirect('/games');
+        
       }
     }
 
