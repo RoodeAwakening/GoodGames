@@ -155,6 +155,4 @@ Project Link: [https://github.com/RoodeAwakening/GoodGames](https://github.com/R
 * [Derek Roode](https://github.com/RoodeAwakening)
 * [Rob Whitacre](https://github.com/RobWhit5113)
 * [Ted Anton](https://github.com/tedjanton)
-* [Alex Rodriguez](https://github.com/alex-therookie)
-
 
