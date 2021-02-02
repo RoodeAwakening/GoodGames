@@ -1,0 +1,24 @@
+.nav{
+  display: flex;
+  background-color: black;
+  padding: 25px 85px;
+  text-align: center;
+  border-radius: 10%;
+  justify-content: space-between;
+
+}
+
+.nav_button{
+  padding: 10px 2px;
+  border-radius: 10%;
+}
+
+.nav_button:hover{
+  background-color: red;
+  color: chartreuse;
+  padding: 10px 2px;
+  border-radius: 10%;
+  box-shadow: -3px 3px 3px #110ed8;
+
+  
+}
