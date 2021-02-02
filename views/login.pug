@@ -2,10 +2,10 @@ extends layout.pug
 
 block content
     form(action='/signup' method='post')
-        input(type='hidden' name='_csrf' method='post')
+        input(type='hidden' name='_csrf' method='post' value=csrfToken)
         input(type='text' name='username' value=user.username class='signup-field' placeholder='Enter Username' required)
-        input(type='text' name='firstname' value=user.firstname class='signup-field' placeholder='First Name' required)
-        input(type='text' name='lastname' value=user.lastname class='signup-field' placeholder='Last Name' required)
+        input(type='text' name='firstname' value=user.firstName class='signup-field' placeholder='First Name' required)
+        input(type='text' name='lastname' value=user.lastName class='signup-field' placeholder='Last Name' required)
         input(type='email' name='email' value=user.email class='signup-field' placeholder='Email' required)
         input(type='password' name='password' class='signup-field' placeholder='Password' required)
         input(type='password' name='confirmpassword' class='signup-field' placeholder='Confirm Password' required)

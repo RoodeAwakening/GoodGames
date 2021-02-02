@@ -8,9 +8,9 @@ const { csrfProtection, asyncHandler } = require('./utils');
 
 /* GET users listing. */
 router.get('/', csrfProtection, (req,res) => {
-  const user = db.User.build()
+  const user = db.User.create();
   res.render('signup', {
-    title: 'Register',
+    title: 'Sign Up',
     user,
     csrfToken: req.csrfToken()
   });
@@ -27,7 +27,7 @@ const userValidators = [
     .withMessage('Please provide a value for Last Name')
     .isLength({ max: 50 })
     .withMessage('Last Name must not be more than 50 characters long'),
-  check('emailAddress')
+  check('email')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Email Address')
     .isLength({ max: 255 })
@@ -35,7 +35,7 @@ const userValidators = [
     .isEmail()
     .withMessage('Email Address is not a valid email')
     .custom((value) => {
-      return db.User.findOne({ where: { emailAddress: value } })
+      return db.User.findOne({ where: { email: value } })
         .then((user) => {
           if (user) {
             return Promise.reject('The provided Email Address is already in use by another account');
@@ -65,12 +65,20 @@ const userValidators = [
 router.post('/', csrfProtection, userValidators, asyncHandler(async (req,res) => {
   const {
     username,
-    firstname,
+    firstName,
     lastName,
     email,
-    hashedPassword
-  } = req.body
-  await User.build({username, firstname, lastName, email, hasedPassword})
+    password
+  } = req.body;
+
+  const user = await db.User.build({
+    username,
+    firstName,
+    lastName,
+    email,
+    password
+  });
+
   const validatorErrors = validationResult(req)
 
   if (validatorErrors.isEmpty()) {
@@ -78,11 +86,12 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req,res) =>
     user.hashedPassword = hashedPassword;
     await user.save();
     res.redirect('/games');
-    
+
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
-    res.render('user-register', {
-      title: 'Register',
+    console.log(validatorErrors)
+    res.render('signup', {
+      title: 'Sign Up',
       user,
       errors,
       csrfToken: req.csrfToken(),
