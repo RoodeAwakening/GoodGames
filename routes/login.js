@@ -23,6 +23,8 @@ const loginValidators = [
 router.post("/", csrfProtection, loginValidators, asyncHandler(async (req, res) => {
   const { emailAddress, hashedPassword } = req.body;
 
+  req.session.user = user;
+
   let errors = [];
   const validatorErrors = validationResult(req);
 
