@@ -1,8 +1,11 @@
+include utils.pug
+
 html
   head
     title="GoodGames"
     link(rel='stylesheet' href='/stylesheets/sign-log.css')
   body
+    +validationErrorSummary(errors)
     form(action='/signup' method='post')
         input(type='hidden' name='_csrf' method='post' value=csrfToken)
         div(class="main")

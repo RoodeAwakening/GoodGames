@@ -42,6 +42,11 @@ align-items: center;
 font-family: 'Ubuntu', sans-serif;
 }
 
+.error {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
 
 .submit {
 cursor: pointer;
