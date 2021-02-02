@@ -4,5 +4,12 @@ block append head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
+        //- script(src='../public/javascripts/games.js')
     body
-        h1 Games Page
+        div(class="page-container")
+            each game in games
+                div(class="game-container")
+                    p(class="title")= game.title
+                    p(class="rating")= game.rating
+                    img(class="game-img" src=`${game.image}`, alt="Game Image")
+                    a(class="button-game-page" id=`game-${game.id}` href=`/games/${game.id}`) Go To Game
