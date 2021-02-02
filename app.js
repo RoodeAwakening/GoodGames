@@ -39,8 +39,8 @@ store.sync();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
 
 
 // catch 404 and forward to error handler
