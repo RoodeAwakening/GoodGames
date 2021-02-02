@@ -2,16 +2,29 @@ const express = require('express');
 const router = express.Router();
 
 const db = require('../db/models');
+const rating = require('../db/models/rating');
 const { csrfProtection, asyncHandler } = require('./utils');
 
 router.get('/', asyncHandler(async(req,res) => {
     const games = await db.Game.findAll()
+    
     res.render('games', {games})
 }))
 
 router.get('/:id', asyncHandler(async(req,res) => {
     const gameId = req.params.id
     const game = await db.Game.findByPk(gameId)
+    const allRatings = await db.Rating.findAll({
+        where : {gameId},
+    })
+    let total = 0
+    for (let i = 0; i < allRatings.length; i++){
+        const rating = allRatings[i]
+        if (rating.yesOrNoVote){
+            total+=1
+        }
+    }
+    game.rating = (total/allRatings.length) * 100
     res.render('game-detail', {game})
 }))
 
