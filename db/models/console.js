@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Console.associate = function(models) {
-    // associations can be defined here
+    Console.hasMany(models.Game, { foreignKey: "consoleId" })
   };
   return Console;
 };
