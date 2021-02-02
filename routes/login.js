@@ -5,6 +5,7 @@ const router = express.Router();
 const db = require('../db/models');
 const bcrypt = require('bcryptjs')
 const { csrfProtection, asyncHandler } = require('./utils');
+const { loginUser } = require('../auth');
 
 /* GET users listing. */
 router.get('/', csrfProtection, asyncHandler(async (req, res)=> {
@@ -23,12 +24,12 @@ const loginValidators = [
 
 router.post("/", csrfProtection, loginValidators, asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body.password)
+  
   // req.session.user = user;
 
   let errors = [];
   const validatorErrors = validationResult(req);
-  console.log(validatorErrors)
+  
   if (validatorErrors.isEmpty()) {
     const user = await db.User.findOne({ where: { email } });
 
@@ -36,7 +37,7 @@ router.post("/", csrfProtection, loginValidators, asyncHandler(async (req, res) 
       const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString());
       
       if (passwordMatch) {
-        
+        loginUser(req, res, user);
         return res.redirect('/games');
         
       }
