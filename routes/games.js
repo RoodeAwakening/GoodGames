@@ -10,7 +10,7 @@ router.get('/', asyncHandler(async (req, res) => {
     const userId = req.session.auth.userId;
 
     res.render('games', { games, userId })
-}))
+}));
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const gameId = req.params.id
