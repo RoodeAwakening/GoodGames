@@ -3,9 +3,22 @@ block append head
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title My Profile
     body
         div
-            h1 User-Profile Page
-        div
-            p= user.firstName
+            h1 Hello, #{user.firstName}!
+        div(class="my-games-container") My Games
+            table
+                thead
+                    tr
+                        th Want to Play
+                        th Currently Playing
+                        th Have Completed
+                tbody
+                    tr
+                        each game in toPlay
+                            td: a(href=`/games/${game.id}`)= game.title
+                        each game in playing
+                            td: a(href=`/games/${game.id}`)= game.title
+                        each game in played
+                            td: a(href=`/games/${game.id}`)= game.title
