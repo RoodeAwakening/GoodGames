@@ -1,8 +1,25 @@
-doctype html
-html(lang="en")
+extends navbar.pug
+block append head
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
-        h1 Game Detail page
+        h1 #{game.title}
+        div
+            img(src=`${game.image}`)
+        div
+            p= game.description
+        div
+            p= game.rating
+            a() Recommend
+            a() Not Recommend
+        div
+            p= game.Console.name
+        div
+            p= game.Publisher.name
+        div
+            p= game.Genre.name
+        div
+            each comment in allComments
+                p= comment.comment

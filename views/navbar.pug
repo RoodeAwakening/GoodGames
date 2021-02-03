@@ -1,4 +1,4 @@
-html 
+html
   head
     link(rel='stylesheet' href='/stylesheets/navbar.css')
     block head
@@ -7,13 +7,12 @@ html
           li.logo
             img(class="logo" src="./images/logo.png", alt="Logo")
           li.nav_button
-            a(href='/') Home
+            a(href='/games') Home
           li.nav_button
-            a(href=`/users/`) My Profile
+            a(href=`/users/${userId}`) My Profile
           li.nav_button
             a(href='/') Place Holder
           li.nav_button
             a(href='/') Place Holder
           li.nav_button 
             a(href='/logout') Logout
-    

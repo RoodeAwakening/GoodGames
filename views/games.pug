@@ -11,5 +11,5 @@ block append head
                 div(class="game-container")
                     p(class="title")= game.title
                     p(class="rating")= game.rating
-                    img(class="game-img" src=`${game.image}`, alt="Game Image")
-                    a(class="button-game-page" id=`game-${game.id}` href=`/games/${game.id}`) Go To Game
+                    a(class="button-game-page" id=`game-${game.id}` href=`/games/${game.id}`)
+                        img(class="game-img" src=`${game.image}`, alt="Game Image")
