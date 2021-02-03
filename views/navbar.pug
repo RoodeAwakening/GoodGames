@@ -4,15 +4,14 @@ html
     block head
       div.nav
         ul
-          li.logo
-            img(class="logo" src="./images/logo.png", alt="Logo")
+          li.nav_button 
+            a(href='/games') 
+              img(class='imgLogo' src="/images/logo.png", alt="", srcset="")
           li.nav_button
             a(href='/games') Home
           li.nav_button
             a(href=`/users/${userId}`) My Profile
           li.nav_button
-            a(href='/') Place Holder
-          li.nav_button
-            a(href='/') Place Holder
-          li.nav_button 
-            a(href='/logout') Logout
+            a(href='/users/logout') Logout
+    
+
