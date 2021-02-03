@@ -26,6 +26,7 @@ block append head
                     p Genre: #{game.Genre.name}
                 div(class="game-comment-container")
                     form(class="game-comment-form" method="post" action=`/games/${game.id}`)
+                        input(type="hidden" value=csrfToken name="_csrf")
                         div(class="game-comment-form__add")
                             label Add a comment below:
                                 div

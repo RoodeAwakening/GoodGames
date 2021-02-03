@@ -5,10 +5,65 @@ const db = require('../db/models');
 const rating = require('../db/models/rating');
 const { csrfProtection, asyncHandler } = require('./utils');
 
-router.get('/', asyncHandler(async (req, res) => {
-    const games = await db.Game.findAll();
+// const getRatings = async (id) => {
+//     const allRatings = await db.Rating.findAll({ 
+//         where: { gameId: id } 
+//     });
+//     return allRatings
+// }
+// const calcRating = async (ratingsArr) => {
+//     let total = 0
+//     let game = ratingsArr[i]
+//     for (let i = 0; i < ratingsArr.length; i++){
+//         const rating = ratingsArr[i]
+//         if (rating.yesOrNoVote){
+//             total+=1
+//         }
+//     }
+//     if (ratingsArr.length === 0) {
+//         game.rating = 0;
+//     } else {
+//         game.rating = (total/ratingsArr.length) * 100
+//     }
+// }
+//     // for (let i = 0; i < allRatings.length; i++){
+//     //     const rating = allRatings[i]
+//     //     if (rating.yesOrNoVote){
+//     //         total+=1
+//     //     }
+//     // }
+//     // if (allRatings.length === 0) {
+//     //     game.rating = 0;
+//     // } else {
+//     //     game.rating = (total/allRatings.length) * 100
+//     // }
 
+router.get('/', asyncHandler(async (req, res) => {
+    const games = await db.Game.findAll({
+        include: db.Rating
+    });
     const userId = req.session.auth.userId;
+    for(let i = 0; i < games.length; i++){
+        let total = 0
+        // const game = games[i]
+        const ratings = games[i].Ratings
+        for(let j = 0; j < ratings.length; j++){
+            const rating = ratings[j]
+            if(rating.yesOrNoVote){
+                total+=1
+            }
+        }
+        if (!ratings.length) {
+            games[i].rating = 0
+        } else {
+            games[i].rating = (total/ratings.length) * 100
+        }
+    }
+
+    
+    
+
+
 
     res.render('games', { games, userId })
 }));
@@ -37,6 +92,16 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }))
 
 
+router.post('/:id', asyncHandler (async (req,res) => {
+    const { comment } = req.body
+    const userId = req.session.auth.userId;
+    const gameId = await req.params.id
+
+    await db.Comment.create({userId, gameId, comment})
+
+    res.redirect(`/games/${gameId}`)
+
+}))
 
 
 module.exports = router;
