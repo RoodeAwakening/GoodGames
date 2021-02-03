@@ -26,6 +26,7 @@ ul {
 }
 
 li {
+  display: flex;
   padding-right: 5em;
   position: relative;
 }
@@ -33,6 +34,22 @@ li {
 li a {
   display: block;
   color: aqua;
+  text-align: center;
+}
+button {
+  display: flex;
+  color: aqua;
+  text-align: center;
+  background: none;
+  border: none;
+  justify-content: center;
+  align-content: center;
+  border: 1px;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
   text-align: center;
 }
 

@@ -12,6 +12,7 @@ html
           li.nav_button
             a(href=`/users/${userId}`) My Profile
           li.nav_button
-            a(href='/users/logout') Logout
-    
+            form(action="/users/logout", method="post")
+              button(type="submit") Logout
+                 
 
