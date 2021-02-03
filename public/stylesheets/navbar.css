@@ -49,8 +49,12 @@ button {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 300;
-  text-align: center;
-  text-align: center;
+  
+}
+
+form{
+  padding: 0px;
+  margin: 0px;
 }
 
 li:first-child {
