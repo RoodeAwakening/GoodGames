@@ -9,16 +9,32 @@ const { logoutUser } = require('../auth');
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const userId = req.session.auth.userId;
-    console.log(userId);
 
-    const user = await db.User.findByPk(userId);
-    // req.session.user = user;
-    // console.log(user);
-    res.render('user-profile', { user, userId })
+    const user = await db.User.findByPk(userId, {
+        include: [db.GameStatus, db.Game]
+    });
+    const userGames = user.Games;
+
+    const toPlay = [];
+    const played = [];
+    const playing = [];
+    userGames.forEach(game => {
+        console.log("game -----------------", game);
+        if (game.GameStatus.status === "toPlay") {
+            toPlay.push(game);
+        } else if (game.GameStatus.status === "played") {
+            played.push(game);
+        } else if (game.GameStatus.status === "playing") {
+            playing.push(game);
+        }
+    });
+
+    console.log("toPlay --->", toPlay);
+    console.log("playing --->", playing);
+    console.log("played --->", played);
+
+    res.render('user-profile', { user, userId, toPlay, played, playing })
 }))
-
-
-
 
 
 

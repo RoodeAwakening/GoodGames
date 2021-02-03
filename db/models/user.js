@@ -27,6 +27,14 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Comment, { foreignKey: "userId" });
     User.hasMany(models.Rating, { foreignKey: "userId" });
     User.hasMany(models.GameStatus, { foreignKey: "userId" });
+
+    const columnMapping = {
+      through: "GameStatus",
+      otherKey: "gameId",
+      foreignKey: "userId"
+    }
+
+    User.belongsToMany(models.Game, columnMapping);
   };
   return User;
 };
