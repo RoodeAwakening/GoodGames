@@ -91,6 +91,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     res.render('game-detail', { game, allComments })
 }))
 
+
 router.post('/:id', asyncHandler (async (req,res) => {
     const { comment } = req.body
     const userId = req.session.auth.userId;
@@ -101,5 +102,6 @@ router.post('/:id', asyncHandler (async (req,res) => {
     res.redirect(`/games/${gameId}`)
 
 }))
+
 
 module.exports = router;
