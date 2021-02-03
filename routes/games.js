@@ -7,11 +7,11 @@ const { csrfProtection, asyncHandler } = require('./utils');
 
 router.get('/', asyncHandler(async (req, res) => {
     const games = await db.Game.findAll();
-    console.log(req.session.auth.userId)
+
     const userId = req.session.auth.userId;
 
     res.render('games', { games, userId })
-}))
+}));
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const gameId = req.params.id
