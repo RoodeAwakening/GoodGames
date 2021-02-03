@@ -7,10 +7,14 @@ const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { logoutUser } = require('../auth');
 
-router.get('/:id', asyncHandler(async(req,res) => {
-    const userId = req.params.id
-    const user = await db.User.findByPk(req.params.id)
-    res.render('user-profile', {user})
+router.get('/:id', asyncHandler(async (req, res) => {
+    const userId = req.session.auth.userId;
+    console.log(userId);
+
+    const user = await db.User.findByPk(userId);
+    // req.session.user = user;
+    // console.log(user);
+    res.render('user-profile', { user, userId })
 }))
 
 

@@ -3,6 +3,32 @@ block append head
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title #{game.title}
+        link(rel='stylesheet' href='/stylesheets/game-detail.css')
     body
-        h1 Game Detail page
+        h1(class="game-title") #{game.title}
+            div(class="game-container")
+                div(class="game-description")
+                    p= game.description
+                div(class="game-image")
+                    img(src=`${game.image}`)
+                div(class="game-rating")
+                    p #{game.rating}% player rating
+                    a() Recommend
+                    a() Not Recommend
+                div(class="game-console")
+                    p Commonly played on #{game.Console.name}
+                div(class="game-publisher")
+                    p Made by #{game.Publisher.name}
+                div(class="game-genre")
+                    p Genre: #{game.Genre.name}
+                div(class="game-comment-container")
+                    form(class="game-comment-form" method="post" action=`/games/${game.id}`)
+                        div(class="game-comment-form__add")
+                            label Add a comment below:
+                                div
+                                    textarea(name="comment" placeholder="write your comment here")
+                                div
+                                    button(type="submit") Add Comment
+                    each comment in allComments
+                        p(class="game-comment")= comment.comment

@@ -5,18 +5,21 @@ const db = require('../db/models');
 const rating = require('../db/models/rating');
 const { csrfProtection, asyncHandler } = require('./utils');
 
-router.get('/', asyncHandler(async(req,res) => {
-    const games = await db.Game.findAll()
-    
-    res.render('games', {games})
+router.get('/', asyncHandler(async (req, res) => {
+    const games = await db.Game.findAll();
+    const userId = req.session.user.id;
+
+    res.render('games', { games, userId })
 }))
 
-router.get('/:id', asyncHandler(async(req,res) => {
+router.get('/:id', asyncHandler(async (req, res) => {
     const gameId = req.params.id
-    const game = await db.Game.findByPk(gameId)
-    const allRatings = await db.Rating.findAll({
-        where : {gameId},
-    })
+    const game = await db.Game.findByPk(gameId, {
+        include: [db.Console, db.Publisher, db.Genre]
+    });
+    const allRatings = await db.Rating.findAll({ where: { gameId } });
+    const allComments = await db.Comment.findAll({ where: { gameId } });
+
     let total = 0
     for (let i = 0; i < allRatings.length; i++){
         const rating = allRatings[i]
@@ -24,8 +27,12 @@ router.get('/:id', asyncHandler(async(req,res) => {
             total+=1
         }
     }
-    game.rating = (total/allRatings.length) * 100
-    res.render('game-detail', {game})
+    if (allRatings.length === 0) {
+        game.rating = 0;
+    } else {
+        game.rating = (total/allRatings.length) * 100
+    }
+    res.render('game-detail', { game, allComments })
 }))
 
 module.exports = router;

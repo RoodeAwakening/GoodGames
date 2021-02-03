@@ -3,13 +3,16 @@ block append head
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-        //- script(src='../public/javascripts/games.js')
+        title GoodGames
+        link(rel='stylesheet' href='/stylesheets/games.css')
     body
-        div(class="page-container")
+        h1(class="welcome") Welcome to GoodGames!
+            div(class="subheader")
+                p Click on one of the below games to view details, give a rating, or add a comment.
+        div(class="game-page-container")
             each game in games
                 div(class="game-container")
                     p(class="title")= game.title
-                    p(class="rating")= game.rating
-                    img(class="game-img" src=`${game.image}`, alt="Game Image")
-                    a(class="button-game-page" id=`game-${game.id}` href=`/games/${game.id}`) Go To Game
+                    a(class="button-game-page" id=`game-${game.id}` href=`/games/${game.id}`)
+                        img(class="game-img" src=`${game.image}`, alt="Game Image")
+                    p(class="rating") #{game.rating}
