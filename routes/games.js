@@ -5,39 +5,6 @@ const db = require('../db/models');
 const rating = require('../db/models/rating');
 const { csrfProtection, asyncHandler } = require('./utils');
 
-// const getRatings = async (id) => {
-//     const allRatings = await db.Rating.findAll({ 
-//         where: { gameId: id } 
-//     });
-//     return allRatings
-// }
-// const calcRating = async (ratingsArr) => {
-//     let total = 0
-//     let game = ratingsArr[i]
-//     for (let i = 0; i < ratingsArr.length; i++){
-//         const rating = ratingsArr[i]
-//         if (rating.yesOrNoVote){
-//             total+=1
-//         }
-//     }
-//     if (ratingsArr.length === 0) {
-//         game.rating = 0;
-//     } else {
-//         game.rating = (total/ratingsArr.length) * 100
-//     }
-// }
-//     // for (let i = 0; i < allRatings.length; i++){
-//     //     const rating = allRatings[i]
-//     //     if (rating.yesOrNoVote){
-//     //         total+=1
-//     //     }
-//     // }
-//     // if (allRatings.length === 0) {
-//     //     game.rating = 0;
-//     // } else {
-//     //     game.rating = (total/allRatings.length) * 100
-//     // }
-
 router.get('/', asyncHandler(async (req, res) => {
     const games = await db.Game.findAll({
         include: db.Rating
@@ -45,7 +12,6 @@ router.get('/', asyncHandler(async (req, res) => {
     const userId = req.session.auth.userId;
     for(let i = 0; i < games.length; i++){
         let total = 0
-        // const game = games[i]
         const ratings = games[i].Ratings
         for(let j = 0; j < ratings.length; j++){
             const rating = ratings[j]
@@ -59,12 +25,6 @@ router.get('/', asyncHandler(async (req, res) => {
             games[i].rating = (total/ratings.length) * 100
         }
     }
-
-    
-    
-
-
-
     res.render('games', { games, userId })
 }));
 

@@ -14,10 +14,13 @@ block append head
                 div(class="game-image")
                     img(src=`${game.image}`)
                 div(class="game-rating")
-                    p #{game.rating}% player rating
+                    p(id="percentage") #{game.rating}% player rating
                         form(id='ratingsBtns' action=`/api/games/${game.id}/ratings`, method="post")
-                            button(id="1" class="voteBtn" type="submit" value= true) Recommend
-                            button(id="2" class="voteBtn" type="submit" value= false) Not Recommend
+                            button(id=`1-${game.id}` class="voteBtn" type="submit" value="true") Recommend
+                            button(id=`2-${game.id}` class="voteBtn" type="submit" value="false") Not Recommend
+                div(class="game-status")
+                    select
+
                 div(class="game-console")
                     p Commonly played on #{game.Console.name}
                 div(class="game-publisher")
