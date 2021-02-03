@@ -10,7 +10,8 @@ const { logoutUser } = require('../auth');
 
 router.post('/:id/ratings',asyncHandler(async(req,res)=>{
   const { userId, gameId, yesOrNoVote } = req.body
-  const newRating = await db.Rating.create ({userId, gameId, yesOrNoVote})
+  console.log('-------------',req);
+  const newRating = await db.Rating.create({userId, gameId, yesOrNoVote})
   res.json({newRating})
 }))
 
