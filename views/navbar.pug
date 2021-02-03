@@ -3,14 +3,16 @@ html
     link(rel='stylesheet' href='/stylesheets/navbar.css')
     block head
       div.nav
-        img(src='./images/logo.png')
-        button(type='button' class='nav_button')
-          a(href='/games' class='nav_button') Home
-        button(type='button' class='nav_button')
-          a(href=`/users/${userId}` class='nav_button') My Profile
-        button(type='button' class='nav_button')
-          a(href='/' class='nav_button') Place Holder
-        button(type='button' class='nav_button')
-          a(href='/' class='nav_button') Place Holder
-        button(type='button' class='nav_button')
-          a(href='/logout' class='nav_button') Logout
+        ul
+          li.logo
+            img(class="logo" src="./images/logo.png", alt="Logo")
+          li.nav_button
+            a(href='/games') Home
+          li.nav_button
+            a(href=`/users/${userId}`) My Profile
+          li.nav_button
+            a(href='/') Place Holder
+          li.nav_button
+            a(href='/') Place Holder
+          li.nav_button 
+            a(href='/logout') Logout
