@@ -8,11 +8,29 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { logoutUser } = require('../auth');
 
 
-router.post('/:id/ratings',asyncHandler(async(req,res)=>{
-  const { userId, gameId, yesOrNoVote } = req.body
-  console.log('-------------',req);
-  const newRating = await db.Rating.create({userId, gameId, yesOrNoVote})
-  res.json({newRating})
+router.post('/:id/ratings', asyncHandler (async (req, res) => {
+  console.log("HELLOOOOOOOOOO");
+  const userId = req.session.auth.userId;
+  const { gameId, yesOrNoVote } = req.body;
+
+  await db.Rating.create({userId, gameId, yesOrNoVote})
+  const allRatings = await db.Rating.findAll({ where: { gameId } });
+
+  let total = 0;
+  for (let i = 0; i < allRatings.length; i++){
+    const rating = allRatings[i]
+    if (rating.yesOrNoVote){
+      total+=1
+    }
+  }
+
+  let newRating;
+  if (allRatings.length === 0) {
+      newRating = 0;
+  } else {
+      newRating = (total/allRatings.length) * 100
+  }
+  res.json({ newRating })
 }))
 
 
