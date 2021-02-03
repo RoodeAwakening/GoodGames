@@ -5,6 +5,7 @@ block append head
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title #{game.title}
         link(rel='stylesheet' href='/stylesheets/game-detail.css')
+        script(src="/javascripts/index.js")
     body
         h1(class="game-title") #{game.title}
             div(class="game-container")
@@ -14,8 +15,11 @@ block append head
                     img(src=`${game.image}`)
                 div(class="game-rating")
                     p #{game.rating}% player rating
-                    a() Recommend
-                    a() Not Recommend
+                        form(id='ratingsBtns' action=`/api/games/${game.id}/ratings`, method="post")
+                            button(id="1" class="voteBtn" type="submit" value= true)
+                                a() Recommend
+                            button(id="2" class="voteBtn" type="submit" value= false)
+                                a() Not Recommend
                 div(class="game-console")
                     p Commonly played on #{game.Console.name}
                 div(class="game-publisher")

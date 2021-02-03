@@ -36,4 +36,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     res.render('game-detail', { game, allComments })
 }))
 
+
+
+
 module.exports = router;
