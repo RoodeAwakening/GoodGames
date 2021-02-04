@@ -19,6 +19,16 @@ font-family: 'Ubuntu', sans-serif;
 font-weight: bold;
 font-size: 23px;
 align-items: center;
+justify-content: center;
+}
+.missing {
+padding-top: 40px;
+color: #989c9e;
+font-family: 'Ubuntu', sans-serif;
+font-weight: bold;
+font-size: 12px;
+display: flex;
+justify-content: center;
 }
 
 .un {
