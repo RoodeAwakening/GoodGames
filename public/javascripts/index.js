@@ -47,6 +47,8 @@ window.addEventListener("load", (event) => {
                 status = "played";
             } else if (value === "playing") {
                 status = "playing";
+            } else if(value === "delete"){
+                status = "delete"
             }
             
             const res = await fetch(`/api/games/${gameId}/statuses`, {

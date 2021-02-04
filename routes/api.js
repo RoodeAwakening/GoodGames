@@ -36,18 +36,27 @@ router.post("/:id/statuses", asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
 
   const { gameId, status } = req.body;
+  
+  if(status === 'delete'){
+    await db.GameStatus.destroy({ where: {
+      userId,
+      gameId
+    }})
+  }else {
+    
   const gameStatus = await db.GameStatus.create({ userId, gameId, status });
 
   res.json({ gameStatus });
+  }
 }));
 
-router.patch("/:id/statuses", asyncHandler(async (req, res) => {
-  const { id, status } = req.body;
-  // const statusUpdate = await db.GameStatus.findOne({ where: status });
+// router.patch("/:id/statuses", asyncHandler(async (req, res) => {
+//   const { id, status } = req.body;
+//   // const statusUpdate = await db.GameStatus.findOne({ where: status });
 
-  // await statusUpdate.update
+//   // await statusUpdate.update
 
-}))
+// }))
 
 router.patch('/:id/ratings', asyncHandler(async(req,res)=>{
 
