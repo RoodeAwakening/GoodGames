@@ -1,22 +1,27 @@
 html
   head
     link(rel='stylesheet' href='/stylesheets/navbar.css')
+    script(src="/javascripts/search.js")
     block head
       .navbar
         .navbar_logo
             a(href='/games') 
-              img(class='imgLogo' src="/images/logo.png", alt="", srcset="")
+              img(class='navbar_Img' src="/images/logo.png", alt="", srcset="")
         .navbar_search
-          input(type="search", placeholder='Search Games')
+          form(action=`/search/games/1`, method="post")
+            input(class='searchBar' id="searchBar" type="search", placeholder='Search Games')
+            input(type="hidden", name="")
+            button.logout(type="submit")
         ul.navbar_list
-          li
-            a(href='/games') Home
-          li
-            a(href=`/users/${userId}`) My Profile
-          li
-            a(href=`/users/${userId}`) My Comments
-          li
-            form(action="/users/logout", method="post")
-              button.logout(type="submit") Logout
+          a(href='/games') Home
+            li
+          a(href=`/users/${userId}`) My Profile
+            li
+          a(href=`/users/${userId}`) My Comments
+            li
+          form(action="/users/logout", method="post")
+            button.logout(type="submit") 
+              img(class='navbar_Img' id='navbar_logout' src="/images/logout.png", alt="", srcset="")
+              li
                  
 
