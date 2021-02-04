@@ -17,18 +17,72 @@ body {
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
   transition: 1s;
   font-size: 18px;
+  background-image: game;
 }
 
+.game-container-background {
+  display: initial;
+  border-image-repeat: repeat;
+  width: 1000px;
+}
+
+.game-image{
+  padding-top: 1em;
+}
 .game-description {
+  display: flex;
+  justify-content: center;
   margin: 1.1em 10%;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: normal; 
+}
+
+.game-description p{
+  width: 460px;
+  
+}
+
+.game-voting{
+  display: flex;
+  justify-content: center;
+}
+
+.up{
+  background-color: #1ce90a;
+  box-shadow: 0px 0px 20px 5px #1ce90a;
+  margin: 1em 1em;
+}
+
+.down{
+  background-color: #d80e0e;
+  box-shadow: 0px 0px 20px 5px rgb(211, 16, 9);
+  margin: 1em 1em;
+
+ 
+  
 }
 
 .game-rating {
+  display: block;
   font-size: 24px;
   font-weight: normal;
+  justify-content: center;
+  margin: 1em;
 }
+
+#ratingsBtns{
+  display: flex;
+  justify-content: center;
+    
+}
+
+.thumb{
+  width: 30px;
+  height: auto;
+}
+
+
+
 
 .game-console,
 .game-publisher,
