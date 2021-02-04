@@ -4,6 +4,7 @@ html
   head
     title="GoodGames"
     link(rel='stylesheet' href='/stylesheets/log-in.css')
+    //- script(src="javascripts/demo")
   body
     +validationErrorSummary(errors)
     form(action='/login' method='post')
@@ -17,3 +18,5 @@ html
                     button(type='submit' class='submit') Login
                     div
                       a(href='/signup' class="missing") Don't Have An Account? Click Here!
+                      a(href='/login/demo' class="missing") Or click here to take the site for a test drive!
+                      
