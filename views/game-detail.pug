@@ -26,17 +26,10 @@ block append head
                 div(class="game-status-container")
                     form(class="status-form" action=`/users/${userId}` method="post")
                         label Add or Change Your Game Status:
-                        button(id=`toPlay-${game.id}` class="statusBtn") Want to Play
-                        button(id=`playing-${game.id}` class="statusBtn") Currently Playing
-                        button(id=`played-${game.id}` class="statusBtn") Have Already Played
-                        button(id=`delete-${game.id}` class="statusBtn") Remove from Game Center
-                        if status = 'toPlay'
-                            button.red(id=`toPlay-${game.id}` class="statusBtn") Want to Play
-                        else if status = 'playing'    
-                            button.red(id=`playing-${game.id}` class="statusBtn") Currently Playing
-                        else if status = 'played'    
-                            button(id=`played-${game.id}` class="statusBtn") Have Already Played
-                        
+                        button(id=`toPlay-${game.id}` class=`statusBtn ${toPlay}`) Want to Play
+                        button(id=`playing-${game.id}` class=`statusBtn ${playing}`) Currently Playing
+                        button(id=`played-${game.id}` class=`statusBtn ${played}`) Have Already Played
+                        button(id=`delete-${game.id}` class=`statusBtn`) Remove from Game Center
                 div(class="game-console")
                     p Commonly played on #{game.Console.name}
                 div(class="game-publisher")

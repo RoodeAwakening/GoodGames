@@ -42,7 +42,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
     
     const game = await db.Game.findByPk(gameId, {
-        include: [db.Console, db.Publisher, db.Genre]
+        include: [db.Console, db.Publisher, db.Genre, db.GameStatus]
     });
     const allRatings = await db.Rating.findAll({ where: { gameId } });
     const allComments = await db.Comment.findAll({ where: { gameId } });
@@ -50,6 +50,23 @@ router.get('/:id', asyncHandler(async (req, res) => {
         userId,
         gameId
     }})
+
+    let toPlay = 'green'
+    let playing = 'green'
+    let played = 'green'
+    console.log(status);
+
+    if (status) {
+        
+        if (status.status === 'toPlay') {
+            toPlay = 'red'
+        }else if(status.status === 'playing'){
+            playing = 'red'
+        }else{
+            played = 'red'
+        }
+    }
+    
 
     let total = 0
     for (let i = 0; i < allRatings.length; i++){
@@ -63,7 +80,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
     } else {
         game.rating = Math.floor((total/allRatings.length) * 100)
     }
-    res.render('game-detail', { game, allComments, status, userId })
+    
+    res.render('game-detail', { game, allComments, toPlay, playing, played, status , userId })
 }))
 
 

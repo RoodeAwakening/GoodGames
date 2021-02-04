@@ -57,9 +57,6 @@ body {
   background-color: #d80e0e;
   box-shadow: 0px 0px 20px 5px rgb(211, 16, 9);
   margin: 1em 1em;
-
- 
-  
 }
 
 .game-rating {
@@ -74,6 +71,10 @@ body {
   display: flex;
   justify-content: center;
     
+}
+
+.red{
+  background-color: red;
 }
 
 .thumb{
