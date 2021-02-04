@@ -25,24 +25,31 @@ router.post('/:id/ratings', asyncHandler (async (req, res) => {
 router.post("/:id/statuses", asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
   const { gameId, status } = req.body;
-
+let gameStatus;
   if (status === 'delete') {
     await db.GameStatus.destroy({ where: { userId, gameId }});
 
   } else {
-    const gameStatus = await db.GameStatus.create({ userId, gameId, status });
-
+    const currentStatus = await db.GameStatus.findOne({where :{
+      userId,
+      gameId
+  }})
+    if (currentStatus) {
+      gameStatus =  await currentStatus.update({status})
+      res.json({ gameStatus });
+    }else{
+     gameStatus = await db.GameStatus.create({ userId, gameId, status });
     res.json({ gameStatus });
+    }
   }
 }));
 
-router.patch('/:id/ratings', asyncHandler(async(req,res)=>{
+// router.get('/:id', asyncHandler(async(req, res)=>{
+//   const userId = req.session.auth.userId;
+//   const gameId = req.params.id;
 
-}));
-
-
-router.delete('/:id/ratings',asyncHandler(async(req,res)=>{
-
-}));
+//   const gameStatus = await db.GameStatus.findOne({where:{userId, gameId}})
+//   res.json({gameStatus})
+// }))
 
 module.exports = router;
