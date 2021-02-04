@@ -8,6 +8,9 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { logoutUser } = require('../auth');
 
 router.get('/:id', asyncHandler(async (req, res) => {
+    if(!req.session.auth){
+        res.redirect('/login')
+    }
     const userId = req.session.auth.userId;
 
     const user = await db.User.findByPk(userId, {
@@ -31,14 +34,6 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
     res.render('user-profile', { user, userId, toPlay, played, playing })
 }));
-
-
-
-
-
-
-
-
 
 
 router.post('/logout', (req,res) => {
