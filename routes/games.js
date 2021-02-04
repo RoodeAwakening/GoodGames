@@ -39,6 +39,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
     }
     const userId = req.session.auth.userId;
     const gameId = req.params.id
+
+    
     const game = await db.Game.findByPk(gameId, {
         include: [db.Console, db.Publisher, db.Genre]
     });
