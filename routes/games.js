@@ -37,12 +37,17 @@ router.get('/:id', asyncHandler(async (req, res) => {
     if(!req.session.auth){
         res.redirect('/login')
     }
+    const userId = req.session.auth.userId;
     const gameId = req.params.id
     const game = await db.Game.findByPk(gameId, {
         include: [db.Console, db.Publisher, db.Genre]
     });
     const allRatings = await db.Rating.findAll({ where: { gameId } });
     const allComments = await db.Comment.findAll({ where: { gameId } });
+    const status = await db.GameStatus.findOne({where :{
+        userId,
+        gameId
+    }})
 
     let total = 0
     for (let i = 0; i < allRatings.length; i++){
@@ -56,7 +61,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     } else {
         game.rating = Math.floor((total/allRatings.length) * 100)
     }
-    res.render('game-detail', { game, allComments })
+    res.render('game-detail', { game, allComments, status })
 }))
 
 
