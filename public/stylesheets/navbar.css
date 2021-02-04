@@ -1,10 +1,10 @@
 .navbar{
   display: flex;
-  
+  background-color: #222831;
 }
 
 .navbar_logo{
-  
+
 
 }
 
@@ -12,6 +12,7 @@
   display: flex;
   justify-content: flex-start;
   width: 3em;
+  padding: 10px;
 }
 
 .navbar_search{
@@ -48,12 +49,12 @@ form{
   border: none;
 }
 
-
-/* body {
+/*
+body {
   margin: 0;
   background-color: #c7f1f7;
 }
-.nav {
+ .nav {
   width: 100vw;
   background-color: #07325a;
 }
