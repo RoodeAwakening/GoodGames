@@ -8,16 +8,21 @@ block append head
         script(src="/javascripts/index.js")
     body
         h1(class="game-title") #{game.title}
-            div(class="game-container")
-                div(class="game-description")
-                    p= game.description
+            div(class="game-container-background")
                 div(class="game-image")
                     img(src=`${game.image}`)
+                div(class="game-description")
+                    p= game.description
                 div(class="game-rating")
                     p(id="percentage") #{game.rating}% player rating
-                        form(id='ratingsBtns' action=`/api/games/${game.id}/ratings`, method="post")
-                            button(id=`1-${game.id}` class="voteBtn" type="submit" value="true") Recommend
-                            button(id=`2-${game.id}` class="voteBtn" type="submit" value="false") Not Recommend
+                    div(class="game-voting")
+                            form(id='ratingsBtns' action=`/api/games/${game.id}/ratings`, method="post")
+                                div
+                                    img(class='thumb' src="/images/thumbUp.png", alt="thumbUp", srcset="")
+                                    button(id=`1-${game.id}` class="voteBtn up" type="submit" value="true") Recommend
+                                div
+                                    button(id=`2-${game.id}` class="voteBtn down" type="submit" value="false") Not Recommend
+                                    img(class='thumb' src="/images/thumbDown.png", alt="thumbDown", srcset="")
                 div(class="game-status-container")
                     form(class="status-form" action=`/users/${userId}` method="post")
                         label Add or Change Your Game Status:
