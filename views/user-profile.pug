@@ -4,21 +4,58 @@ block append head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title My Profile
+        link(rel='stylesheet' href='/stylesheets/my-profile.css')
     body
-        div
-            h1 Hello, #{user.firstName}!
-        div(class="my-games-container") My Games
-            table
-                thead
-                    tr
-                        th Want to Play
-                        th Currently Playing
-                        th Have Completed
-                tbody
-                    tr
-                        each game in toPlay
-                            td: a(href=`/games/${game.id}`)= game.title
-                        each game in playing
-                            td: a(href=`/games/${game.id}`)= game.title
-                        each game in played
-                            td: a(href=`/games/${game.id}`)= game.title
+        //- div
+        //-     h1(class="header") Hello, #{user.firstName}!
+        div(class="subheader")
+            h2 My Game Center
+        div(class="my-games-container")
+            div(class="toPlay-container")
+                ul(class="toPlay")
+                    label Want to Play
+                        div(class="game-list")
+                            each game in toPlay
+                                div(class="game-title-and-img")
+                                    li
+                                        label(class="game-title")= game.title
+                                            p
+                                        a(href=`/games/${game.id}`)
+                                            img(class="game-img" src=`${game.image}`, alt="Game Image")
+            div(class="playing-container")
+                ul(class="playing")
+                    label Currently Playing
+                    div(class="game-list")
+                            each game in playing
+                                div(class="game-title-and-img")
+                                    li
+                                        label(class="game-title")= game.title
+                                            p
+                                        a(href=`/games/${game.id}`)
+                                            img(class="game-img" src=`${game.image}`, alt="Game Image")
+            div(class="played-container")
+                ul(class="played")
+                    label Have Played
+                    div(class="game-list")
+                            each game in played
+                                div(class="game-title-and-img")
+                                    li
+                                        label(class="game-title")= game.title
+                                            p
+                                        a(href=`/games/${game.id}`)
+                                            img(class="game-img" src=`${game.image}`, alt="Game Image")
+
+            //- table
+            //-     thead
+            //-         tr
+            //-             th Want to Play
+            //-             th Currently Playing
+            //-             th Have Completed
+            //-     tbody
+            //-         tr
+            //-             each game in toPlay
+            //-                 td: a(href=`/games/${game.id}`)= game.title
+            //-             each game in playing
+            //-                 td: a(href=`/games/${game.id}`)= game.title
+            //-             each game in played
+            //-                 td: a(href=`/games/${game.id}`)= game.title

@@ -19,7 +19,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const played = [];
     const playing = [];
     userGames.forEach(game => {
-        console.log("game -----------------", game);
+        // console.log("game -----------------", game);
         if (game.GameStatus.status === "toPlay") {
             toPlay.push(game);
         } else if (game.GameStatus.status === "played") {
@@ -29,12 +29,10 @@ router.get('/:id', asyncHandler(async (req, res) => {
         }
     });
 
-    console.log("toPlay --->", toPlay);
-    console.log("playing --->", playing);
-    console.log("played --->", played);
-
     res.render('user-profile', { user, userId, toPlay, played, playing })
-}))
+}));
+
+
 
 
 
@@ -47,10 +45,10 @@ router.post('/logout', (req,res) => {
 
     req.session.destroy(function(err) {
     })
-    
+
     res.redirect('/login')
-   
-    
+
+
 })
 
 module.exports = router;
