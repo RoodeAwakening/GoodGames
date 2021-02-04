@@ -61,7 +61,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     } else {
         game.rating = Math.floor((total/allRatings.length) * 100)
     }
-    res.render('game-detail', { game, allComments, status })
+    res.render('game-detail', { game, allComments, status, userId })
 }))
 
 
