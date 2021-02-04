@@ -8,7 +8,7 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { loginUser } = require('../auth');
 
 /* GET users listing. */
-router.get('/', csrfProtection, (req,res) => {
+router.get('/', csrfProtection, (req, res) => {
   const user = db.User.build();
   res.render('signup', {
     title: 'Sign Up',
@@ -63,7 +63,7 @@ const userValidators = [
     })
 ];
 
-router.post('/', csrfProtection, userValidators, asyncHandler(async (req,res) => {
+router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) => {
   const {
     username,
     firstName,
@@ -86,7 +86,7 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req,res) =>
     const hashedPassword = await bcrypt.hash(password, 10);
     user.hashedPassword = hashedPassword;
     await user.save();
-    loginUser(req,res,user)
+    loginUser(req, res, user)
     res.redirect('/games');
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
