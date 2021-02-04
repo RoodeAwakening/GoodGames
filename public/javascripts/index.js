@@ -6,7 +6,6 @@ window.addEventListener("load", (event) => {
 
         button.addEventListener("click", async (event) => {
             event.preventDefault();
-            console.log('-----LOG-----', event.target);
             // grab the id of the button that was clicked and split the game id from the element id
             const gameId = event.target.id.split("-")[1];
             const value = event.target.value;
@@ -28,6 +27,41 @@ window.addEventListener("load", (event) => {
             const data = await res.json();
             let percentage = document.getElementById("percentage");
             percentage.innerHTML = `${data.newRating}% player rating`;
+        })
+    }
+
+    const statusBtns = document.querySelectorAll(".statusBtn");
+
+    for (let i = 0; i < statusBtns.length; i++) {
+        const statusBtn = statusBtns[i];
+
+        statusBtn.addEventListener("click", async (event) => {
+            event.preventDefault();
+            const gameId = event.target.id.split("-")[1];
+            const value = event.target.id.split("-")[0];
+
+            let status;
+            if (value === "toPlay") {
+                status = "toPlay";
+            } else if (value === "played") {
+                status = "played";
+            } else if (value === "playing") {
+                status = "playing";
+            }
+            
+            const res = await fetch(`/api/games/${gameId}/statuses`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ gameId, status }),
+            });
+            const data = await res.json();
+
+            const targetBtn = document
+            .getElementById(`${data.gameStatus.status}-${data.gameStatus.gameId}`)
+
+            targetBtn.style.backgroundColor = "red";
         })
     }
 })
