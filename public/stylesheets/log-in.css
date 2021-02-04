@@ -26,7 +26,9 @@ padding-top: 40px;
 color: #989c9e;
 font-family: 'Ubuntu', sans-serif;
 font-weight: bold;
-font-size: 16px;
+font-size: 12px;
+display: flex;
+justify-content: center;
 }
 
 .un {
