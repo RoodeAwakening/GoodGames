@@ -13,6 +13,11 @@ router.get('/', csrfProtection, asyncHandler(async (req, res)=> {
   })
 );
 
+//demo useer
+router.get('/demo', csrfProtection, asyncHandler(async (req, res)=> {
+  res.render('login-demo', { csrfToken: req.csrfToken() })
+  })
+);
 const loginValidators = [
   check('email')
     .exists({ checkFalsy: true })
