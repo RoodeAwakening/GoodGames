@@ -9,7 +9,6 @@ const { logoutUser } = require('../auth');
 
 
 router.post('/:id/ratings', asyncHandler (async (req, res) => {
-  console.log("HELLOOOOOOOOOO");
   const userId = req.session.auth.userId;
   const { gameId, yesOrNoVote } = req.body;
 
@@ -33,6 +32,22 @@ router.post('/:id/ratings', asyncHandler (async (req, res) => {
   res.json({ newRating })
 }))
 
+router.post("/:id/statuses", asyncHandler(async (req, res) => {
+  const userId = req.session.auth.userId;
+
+  const { gameId, status } = req.body;
+  const gameStatus = await db.GameStatus.create({ userId, gameId, status });
+
+  res.json({ gameStatus });
+}));
+
+router.patch("/:id/statuses", asyncHandler(async (req, res) => {
+  const { id, status } = req.body;
+  // const statusUpdate = await db.GameStatus.findOne({ where: status });
+
+  // await statusUpdate.update
+
+}))
 
 router.patch('/:id/ratings', asyncHandler(async(req,res)=>{
 

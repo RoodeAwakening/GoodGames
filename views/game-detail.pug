@@ -18,9 +18,12 @@ block append head
                         form(id='ratingsBtns' action=`/api/games/${game.id}/ratings`, method="post")
                             button(id=`1-${game.id}` class="voteBtn" type="submit" value="true") Recommend
                             button(id=`2-${game.id}` class="voteBtn" type="submit" value="false") Not Recommend
-                div(class="game-status")
-                    select
-
+                div(class="game-status-container")
+                    form(class="status-form" action=`/users/${userId}` method="post")
+                        label Add or Change Your Game Status:
+                        button(id=`toPlay-${game.id}` class="statusBtn") Want to Play
+                        button(id=`playing-${game.id}` class="statusBtn") Currently Playing
+                        button(id=`played-${game.id}` class="statusBtn") Have Already Played
                 div(class="game-console")
                     p Commonly played on #{game.Console.name}
                 div(class="game-publisher")
