@@ -1,4 +1,55 @@
-body {
+.navbar{
+  display: flex;
+  
+}
+
+.navbar_logo{
+  
+
+}
+
+.imgLogo{
+  display: flex;
+  justify-content: flex-start;
+  width: 3em;
+}
+
+.navbar_search{
+  display: flex;
+  justify-content: center;
+  padding: 4px 26px 4px 8px;
+  height: 32px;
+  flex: 1;
+    padding: 4px 26px 4px 8px;
+    width: 33%%;
+}
+
+.navbar_list{
+display: flex;
+justify-content: flex-end;
+
+}
+
+.navbar_list li{
+  list-style: none;
+}
+
+
+form{
+  padding: 0px;
+  margin: 0px;
+}
+
+.logout{
+  cursor: pointer;
+  background: none;
+  text-transform: uppercase;
+  text-decoration: underline;
+  border: none;
+}
+
+
+/* body {
   margin: 0;
   background-color: #c7f1f7;
 }
@@ -6,6 +57,16 @@ body {
   width: 100vw;
   background-color: #07325a;
 }
+
+
+.navbar_search{
+  margin-right: 224px;
+  display: flex;
+  justify-content: center;
+  padding-right: 200px;
+  align-items: center;
+}
+
 
 ul {
   list-style: none;
@@ -40,16 +101,18 @@ button {
   display: flex;
   color: aqua;
   text-align: center;
-  background: none;
   border: none;
   justify-content: center;
   align-content: center;
   border: 1px;
   background-color: transparent;
+  background: none;
   text-transform: uppercase;
+  text-decoration: underline;
   font-size: 14px;
   font-weight: 300;
-  
+  cursor: pointer;
+
 }
 
 form{
@@ -60,6 +123,8 @@ form{
 li:first-child {
   margin-right: auto;
 }
+
+
 
 .nav_button {
   border: 1px;
@@ -124,4 +189,4 @@ li:first-child {
     width: 50vw;
     height: auto;
   }
-}
+} */

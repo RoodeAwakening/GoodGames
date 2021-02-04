@@ -2,17 +2,21 @@ html
   head
     link(rel='stylesheet' href='/stylesheets/navbar.css')
     block head
-      div.nav
-        ul
-          li.nav_button 
+      .navbar
+        .navbar_logo
             a(href='/games') 
               img(class='imgLogo' src="/images/logo.png", alt="", srcset="")
-          li.nav_button
+        .navbar_search
+          input(type="search", placeholder='Search Games')
+        ul.navbar_list
+          li
             a(href='/games') Home
-          li.nav_button
+          li
             a(href=`/users/${userId}`) My Profile
-          li.nav_button
+          li
+            a(href=`/users/${userId}`) My Comments
+          li
             form(action="/users/logout", method="post")
-              button(type="submit") Logout
+              button.logout(type="submit") Logout
                  
 
