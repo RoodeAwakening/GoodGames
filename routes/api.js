@@ -27,7 +27,7 @@ router.post('/:id/ratings', asyncHandler (async (req, res) => {
   if (allRatings.length === 0) {
       newRating = 0;
   } else {
-      newRating = (total/allRatings.length) * 100
+      newRating = Math.floor((total/allRatings.length) * 100)
   }
   res.json({ newRating })
 }))

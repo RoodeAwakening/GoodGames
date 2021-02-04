@@ -27,7 +27,7 @@ router.get('/', asyncHandler(async (req, res) => {
         if (!ratings.length) {
             games[i].rating = 0
         } else {
-            games[i].rating = (total/ratings.length) * 100
+            games[i].rating = Math.floor((total/ratings.length) * 100)
         }
     }
     res.render('games', { games, userId })
@@ -54,7 +54,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     if (allRatings.length === 0) {
         game.rating = 0;
     } else {
-        game.rating = (total/allRatings.length) * 100
+        game.rating = Math.floor((total/allRatings.length) * 100)
     }
     res.render('game-detail', { game, allComments })
 }))
