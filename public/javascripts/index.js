@@ -6,7 +6,6 @@ window.addEventListener("load", (event) => {
 
         button.addEventListener("click", async (event) => {
             event.preventDefault();
-            // grab the id of the button that was clicked and split the game id from the element id
             const gameId = event.target.id.split("-")[1];
             const value = event.target.value;
 
@@ -50,7 +49,7 @@ window.addEventListener("load", (event) => {
             } else if(value === "delete"){
                 status = "delete"
             }
-            
+
             const res = await fetch(`/api/games/${gameId}/statuses`, {
                 method: "POST",
                 headers: {

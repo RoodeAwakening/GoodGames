@@ -8,7 +8,7 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { logoutUser } = require('../auth');
 
 router.get('/:id', asyncHandler(async (req, res) => {
-    if(!req.session.auth){
+    if (!req.session.auth) {
         res.redirect('/login')
     }
     const userId = req.session.auth.userId;
@@ -17,12 +17,12 @@ router.get('/:id', asyncHandler(async (req, res) => {
         include: [db.GameStatus, db.Game]
     });
     const userGames = user.Games;
+    // console.log("---------", userGames);
 
     const toPlay = [];
     const played = [];
     const playing = [];
     userGames.forEach(game => {
-        // console.log("game -----------------", game);
         if (game.GameStatus.status === "toPlay") {
             toPlay.push(game);
         } else if (game.GameStatus.status === "played") {
