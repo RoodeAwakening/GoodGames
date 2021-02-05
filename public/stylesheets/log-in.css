@@ -1,5 +1,5 @@
 body {
-background-color: #c7f1f7;
+background-color: #e8e8e8;
 font-family: 'Ubuntu', sans-serif;
 }
 
@@ -7,14 +7,22 @@ font-family: 'Ubuntu', sans-serif;
 background-color: #FFFFFF;
 width: 400px;
 height: 435px;
-margin: 7em auto;
+margin: 6em auto;
 border-radius: 1.5em;
 box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
-
+#title{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #30475e
+    
+}
 .sign {
-padding-top: 40px;
-color: #193e57;
+padding-top: 35px;
+color: #30475e;
 font-family: 'Ubuntu', sans-serif;
 font-weight: bold;
 font-size: 23px;
@@ -23,7 +31,7 @@ justify-content: center;
 }
 .missing {
 padding-top: 20px;
-color: #989c9e;
+color: #f05454;
 font-family: 'Ubuntu', sans-serif;
 font-weight: bold;
 font-size: 12px;
@@ -62,7 +70,7 @@ font-family: 'Ubuntu', sans-serif;
 cursor: pointer;
 border-radius: 5em;
 color: #fff;
-background: linear-gradient(to right, #02305c, #94c5ee);
+background: linear-gradient(to right, #f05454 , #ecb8b8);
 border: 0;
 padding-left: 40px;
 padding-right: 40px;
