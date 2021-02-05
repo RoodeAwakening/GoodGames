@@ -14,10 +14,15 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const userId = req.session.auth.userId;
 
     const user = await db.User.findByPk(userId, {
-        include: [db.GameStatus, db.Game]
+        include: [db.GameStatus, db.Game, db.Comment]
     });
+
+    const comments = await db.Comment.findAll({
+        where: { userId },
+        include: db.Game
+    });
+
     const userGames = user.Games;
-    // console.log("---------", userGames);
 
     const toPlay = [];
     const played = [];
@@ -32,7 +37,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
         }
     });
 
-    res.render('user-profile', { user, userId, toPlay, played, playing })
+    res.render('user-profile', { user, userId, toPlay, played, playing, comments })
 }));
 
 
