@@ -24,6 +24,22 @@ body {
   font-size: 35px;
 }
 
+#title{
+  display: flex;
+  height: 75px;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-content: center;
+  padding-top: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #30475e
+
+}
+
+#welcome{
+  width: 700px
+}
+
 .subheader p {
   font-size: 18px;
   margin: 10px 0;

@@ -8,6 +8,10 @@
   text-transform: uppercase;
   background-color:var(--purple);
   height: 55px;
+  border: solid greenyellow;
+  box-shadow: 0px 0px 07px 5px greenyellow;
+  width: 98%;
+  margin-right: 10px;
   }
 
 .navbar_logo{
@@ -30,19 +34,15 @@
 
 .navbar_search{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 1px 26px 1px 8px;
   margin: 0px;
   flex: 1px;
-  width: 200px;
+  width: 100px;
   align-items: center;
 }
 
-.navbar_search_img{
-  display: flex;
-  align-content: center;
-  height: 21px;
-}
+
 
 .searchBar{
   width: 250px;
@@ -50,40 +50,51 @@
 
 
 
-.navbar_list{
+.navbar_list,
+.navbar_links{
 display: flex;
-justify-content: flex-end;
+
 align-items: center;
 padding: 1px 1px 1px 1px;
 margin: 0px;
-width: auto;
+width:100%;
 
 }
 
-.navbar_list li{
+.navbar_links{
+  padding-left: 30px;
+}
+
+.navbar_list li,
+.navbar_links li{
   display: flex;
   list-style: none;
-  
   }
 
-.navbar_list a:hover{
+  .navbar_links a:hover{
   text-align: center;
   color: rgb(0, 0, 0);
   background-color: #4cc9f0;
   box-shadow: 0px 0px 20px 13px rgba(76, 201, 240, 1);
 }
 
-.navbar_list a{
+.navbar_links a{
   margin-right: 10px;
   padding: 8px 3px;
   color: rgb(150, 248, 3);
 }
 
-
+.powerButton{
+  width: 75px;
+  display: flex;
+  justify-content: flex-end;
+  
+}
 form{
   display: flex;
   padding: 0px;
   margin: 0px;
+  justify-content: flex-end;
 }
 
 .logout{
@@ -121,10 +132,40 @@ footer {
   padding-top: 25px;
   padding-bottom: 25px;
   margin-top: 80px;
+  margin-bottom: 0px;
+  height: 200px;
+}
+
+.footer_content{
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+  padding-bottom: 10px;
+ 
+}
+
+.column_about{
+  padding-left: 40px;
+}
+
+.footer_content_links{
+  display: flex;
+  justify-content: center;
+  width: 25%;
+ 
+}
+
+.column_links{
+  margin: 0px 74px;
+  width: max-content;
 }
 
 .ul_footer{
   padding: 0px;
+  display: flex;
+  padding-right: 5px;
+  justify-content: space-between;
+  width: max-content;
 }
 
 .ul_footer li{
@@ -204,4 +245,22 @@ width: auto;
   margin-right: 10px;
   padding: 8px 3px;
   color: rgb(150, 248, 3);
+}
+
+
+@media(max-width:1024px) {
+ 
+
+  footer {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .bottom p {
+    text-align: center;
+  }
 }
