@@ -5,17 +5,20 @@ html
     title="GoodGames"
     link(rel='stylesheet' href='/stylesheets/log-in.css')
     
-  body
-    +validationErrorSummary(errors)
-    h1(id='title') Welcome to GoodGames!
-    form(action='/login' method='post')
-        input(type='hidden' name='_csrf' method='post' value=csrfToken)
-        div(class="main")
-            p(class="sign" align="center") Demo Login
-                div(class="sign")
-                    input(type='text' name='username' class='un' value='DemoUser' required)
-                    input(type='email' name='email' class='un' value='demo@user.com' required)
-                    input(type='password' name='password' class='un' value='P@ssw0rd' required)
-                    button(type='submit' class='submit') Login
-                    div
-                      a(href='/signup' class="missing") Want to Signup? Click Here!
+  body.login_body
+    .background_image
+      .login_content
+        +validationErrorSummary(errors)
+        #title
+          img(src="/images/title_header.png", alt="", srcset="")
+      form(action='/login' method='post')
+          input(type='hidden' name='_csrf' method='post' value=csrfToken)
+          div(class="main")
+              p(class="sign" align="center") Demo Login
+                  div(class="sign")
+                      input(type='text' name='username' class='un' value='DemoUser' required)
+                      input(type='email' name='email' class='un' value='demo@user.com' required)
+                      input(type='password' name='password' class='un' value='P@ssw0rd' required)
+                      button(type='submit' class='submit') Login
+                      div
+                        a(href='/signup' class="missing") Want to Signup? Click Here!

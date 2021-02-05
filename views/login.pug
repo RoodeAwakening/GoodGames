@@ -5,19 +5,22 @@ html
     title="GoodGames"
     link(rel='stylesheet' href='/stylesheets/log-in.css')
     //- script(src="javascripts/demo")
-  body
-    +validationErrorSummary(errors)
-    h1(id='title') Welcome to GoodGames!
-    form(action='/login' method='post')
-        input(type='hidden' name='_csrf' method='post' value=csrfToken)
-        div(class="main")
-            p(class="sign" align="center") Login
-                div(class="sign")
-                    input(type='text' name='username' class='un' placeholder='Enter Username' required)
-                    input(type='email' name='email' class='un' placeholder='Email' required)
-                    input(type='password' name='password' class='un' placeholder='Password' required)
-                    button(type='submit' class='submit') Login
-                    div
-                      a(href='/signup' class="missing") Don't Have An Account? Click Here!
-                      a(href='/login/demo' class="missing") Or click here to take the site for a test drive!
-                      
+  body.login_body
+    .background_image
+      .login_content
+        +validationErrorSummary(errors)
+        #title
+          img(src="/images/title_header.png", alt="", srcset="")
+        form(action='/login' method='post')
+            input(type='hidden' name='_csrf' method='post' value=csrfToken)
+            div(class="main")
+                p(class="sign" align="center") Login
+                    div(class="sign")
+                        input(type='text' name='username' class='un' placeholder='Enter Username' required)
+                        input(type='email' name='email' class='un' placeholder='Email' required)
+                        input(type='password' name='password' class='un' placeholder='Password' required)
+                        button(type='submit' class='submit') Login
+                        div
+                          a(href='/signup' class="missing") Don't Have An Account? Click Here!
+                          a(href='/login/demo' class="missing") Or click here to take the site for a test drive!
+

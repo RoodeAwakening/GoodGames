@@ -8,10 +8,7 @@ html
             a(href='/games') 
               img(class='navbar_Img' src="/images/logo.png", alt="", srcset="")
         .navbar_search
-          form(action=`/search/games/1`, method="post")
             input(class='searchBar' id="searchBar" type="search", placeholder='Search Games')
-            input(type="hidden", name="")
-            button.logout(type="submit")
         ul.navbar_list
           a(href='/games') Home
             li
@@ -23,5 +20,33 @@ html
             button.logout(type="submit") 
               img(class='navbar_Img' id='navbar_logout' src="/images/logout.png", alt="", srcset="")
               li
-                 
-
+    footer
+      block footer
+        .column
+          h3.footer_h3 About Us
+          p.footer_p
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore amet, vitae, ipsa doloremque doloribus, aspernatur earum eaque soluta architecto omnis molestiae aperiam corporis accusamus fugit.
+        .column
+          h3.footer_h3 important
+          ul.ul_footer
+            li
+              a(href='#') link 1
+            li
+              a(href='#') link 2
+            li
+              a(href='#') link 3
+            li
+              a(href='#') link 4
+        .column
+          h3.footer_h3 important
+          ul.ul_footer
+            li
+              a(href='#') link 1
+            li
+            a(href='#') link 2
+            li
+              a(href='#') link 3
+            li
+              a(href='#') link 4
+      .bottom
+        p.footer_p &copy; copyright 2020      
