@@ -6,10 +6,11 @@ block append head
         title My Profile
         link(rel='stylesheet' href='/stylesheets/my-profile.css')
     body
-        div(class="header-container")
-            h1(class="header") Hello, #{user.firstName}! Welcome to your game center.
-            div(class="subheader")
-                p Click on one of your games below to change your play status.
+        div.topContainer
+            div(class="header-container")
+                h1(class="header") Hello, #{user.firstName}! Welcome to your game center.
+                div(class="subheader")
+                    p Click on one of your games below to change your play status.
         div(class="profile-sections")
             div(class="my-games-container")
                 div(class="toPlay-container")
