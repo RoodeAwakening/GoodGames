@@ -52,8 +52,9 @@ block append head
                         tr
                             th Title
                             th Comment
-                    tbody
+                    tbody.comment_overflow
                         each comment in comments
                             tr
                                 td: a(href=`/games/${comment.Game.id}`)= comment.Game.title
                                 td= comment.comment
+block append footer
