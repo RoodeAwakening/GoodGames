@@ -1,15 +1,21 @@
 body {
   background-color: #e8e8e8;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   color: #30475e;
   font-size: 18px;
 }
 
 .game-title {
+  display: flex;
   margin: 40px 40px;
   text-align: center;
+  justify-content: center;
 }
 
+.game-body {
+  display: flex;
+  padding-right: 10px;
+}
 .game-container {
   display: grid;
   margin: 1.2em;
@@ -20,40 +26,48 @@ body {
   background-image: game;
 }
 
-.game-container-background {
-  display: initial;
-  border-image-repeat: repeat;
-  width: 1000px;
+.game-comment-container {
+  padding-top: 10px;
 }
 
-.game-image{
+.game-container-background {
+  display: grid;
+  align-content: center;
+  border-image-repeat: repeat;
+  width: 1000px;
+  align-self: center;
+  grid-template-columns: 4fr 2fr;
+  padding: 0px;
+  margin: auto;
+}
+
+.game-image {
+  align-items: center;
   padding-top: 1em;
+  margin: 1.1em 10%;
+  padding: 0px 10px;
+  width: auto;
 }
 .game-description {
   display: flex;
   justify-content: center;
   margin: 1.1em 10%;
   font-size: 18px;
-  font-weight: normal; 
+  font-weight: normal;
 }
 
-.game-description p{
-  width: 460px;
-  
-}
-
-.game-voting{
+.game-voting {
   display: flex;
   justify-content: center;
 }
 
-.up{
+.up {
   background-color: #1ce90a;
   box-shadow: 0px 0px 20px 5px #1ce90a;
   margin: 1em 1em;
 }
 
-.down{
+.down {
   background-color: #d80e0e;
   box-shadow: 0px 0px 20px 5px rgb(211, 16, 9);
   margin: 1em 1em;
@@ -64,50 +78,39 @@ body {
   font-size: 24px;
   font-weight: normal;
   justify-content: center;
-  margin: 1em;
+  margin: 0px;
 }
 
-#ratingsBtns{
+#percentage {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#ratingsBtns {
   display: flex;
   justify-content: center;
-    
 }
 
-.red{
+.red {
   background-color: red;
 }
 
-.thumb{
+.thumb {
   width: 30px;
   height: auto;
 }
 
-.status-form{
-  display: block;
-  margin: 1em;
-}
-
-.statusBtn{
-  margin-top: 1em;
-}
-
-.statusBtn:hover{
-  box-shadow: 0px 0px 10px 5px rgb(211, 16, 9);
-  background-image: linear-gradient(to right, #ff000075 0%, #ff0000 51%, #ff00007e 100%);
-}
-
-
-.details{
+.details {
   font-style: normal;
   font-size: small;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.detail_images{
+.detail_images {
   width: 30px;
 }
-
 
 .game-console,
 .game-publisher,
@@ -120,10 +123,50 @@ body {
 
 .game-comment-form {
   display: grid;
-
 }
 
-#comment_box{
+.game-detail-comments {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.game-detail-comment {
+  display: flex;
+  font-size: 14px;
+}
+
+.game-comment-user {
+  padding-right: 10px;
+}
+
+#comment_box {
   width: 400px;
   height: 50px;
+}
+
+.status-form {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  padding-top: 7px;
+  padding-bottom: 20px;
+}
+
+.status-form label {
+  display: flex;
+  justify-content: center;
+}
+
+.statusBtn {
+  margin-top: 1em;
+}
+
+.statusBtn:hover {
+  box-shadow: 0px 0px 10px 5px rgb(211, 16, 9);
+  background-image: linear-gradient(
+    to right,
+    #ff000075 0%,
+    #ff0000 51%,
+    #ff00007e 100%
+  );
 }
