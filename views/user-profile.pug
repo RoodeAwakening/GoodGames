@@ -47,13 +47,13 @@ block append head
                                                 img(class="game-img" src=`${game.image}`, alt="Game Image")
             div(class="my-comments-container")
                 table
+                    caption My Comments
                     thead
-                        div(class="my-comments") My Comments
+                        tr
+                            th Title
+                            th Comment
+                    tbody
+                        each comment in comments
                             tr
-                                th Title
-                                th Comment
-                        tbody
-                            each comment in comments
-                                tr
-                                    td= comment.Game.title
-                                    td= comment.comment
+                                td: a(href=`/games/${comment.Game.id}`)= comment.Game.title
+                                td= comment.comment
