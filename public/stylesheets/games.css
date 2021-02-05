@@ -11,6 +11,16 @@ body {
   color: #2c2c2c;
 }
 
+.games_page_header{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+
+
 .welcome {
   display: grid;
   flex-direction: column;
@@ -30,9 +40,12 @@ body {
   background-repeat: no-repeat;
   justify-content: center;
   align-content: center;
-  padding-top: 20px;
   font-family: 'Ubuntu', sans-serif;
-  color: #30475e
+  color: #30475e;
+  max-width: fit-content;
+  height: fit-content;
+  background-color: rgba(199, 199, 199, 0.90);
+  border-radius: 1em;
 
 }
 
@@ -44,6 +57,8 @@ body {
   font-size: 18px;
   margin: 10px 0;
   font-weight: normal;
+  display: flex;
+  justify-content: center;
 }
 
 .game-page-container {
@@ -87,6 +102,6 @@ body {
   content: "% would recommend";
 }
 
-img {
+.game-img {
   max-width: 300px;
 }

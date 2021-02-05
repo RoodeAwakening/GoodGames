@@ -6,10 +6,12 @@ block append head
         title GoodGames
         link(rel='stylesheet' href='/stylesheets/games.css')
     body
-        #title
-            img(#welcome src="/images/title_header.png", alt="", srcset="")
-            div(class="subheader")
-            p Click on one of the below games to view details, give a rating, or add a comment.
+        .games_page_header
+            #title
+                div
+                    img(#welcome src="/images/title_header.png", alt="", srcset="")
+                    div(class="subheader")
+                        p Click on one of the below games to view details, give a rating, or add a comment.
         div(class="game-page-container")
             each game in games
                 div(class="game-container" )
