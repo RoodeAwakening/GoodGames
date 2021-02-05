@@ -1,19 +1,36 @@
 body {
   background-color: #e8e8e8;
+  background-image: url(../images/retro-background.jpg);
+  background-position: center;
+  background-size: cover;
+  height: -webkit-fill-available;
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Ubuntu', sans-serif;
   color: #2c2c2c;
   font-size: 18px;
 }
 
+.header-container {
+  display: grid;
+  flex-direction: column;
+  margin: 40px 12px 12px 12px;
+  color: #2c2c2c;
+  background-color: rgba(199, 199, 199, 0.85);
+  border-radius: .5em;
+  width: 85%;
+  padding: 20px;
+  font-size: 35px;
+}
+
 .header {
-  margin: 40px 40px;
-  font-size: 40px;
+  font-size: 35px;
+  margin: 0;
 }
 
 .subheader {
-  font-size: 20px;
-  margin-left: 40px;
-  font-weight: 50;
+  font-size: 18px;
 }
 
 .profile-sections {
@@ -33,13 +50,14 @@ body {
   margin: 1.2em;
   padding: 3%;
   border-radius: 1em;
+  background-color: rgba(199, 199, 199, 0.85);
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
   font-size: 18px;
   overflow-y:scroll;
-  height: 732px;
+  height: auto;
 }
 
-.comment_overflow{
+.comment_overflow {
   font-size: 15px;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -53,6 +71,10 @@ caption {
   padding: 3%;
   font-weight: bolder;
   font-size: 20px;
+}
+
+.table-header {
+  border-bottom: 5px solid black;
 }
 
 th, td {
@@ -101,7 +123,7 @@ img {
   width: 200px;
   height: auto;
   border-radius: .5em;
-  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  /* box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14); */
 }
 
 .game-list {
@@ -112,10 +134,11 @@ img {
 .my-games-container {
   display: flex;
   justify-content: space-around;
+  background-color: rgba(199, 199, 199, 0.85);
   margin: 1.2em;
   border-radius: 1em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
   font-size: 18px;
-  height: 750px;
+  height: 600px;
 
 }
