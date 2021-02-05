@@ -22,12 +22,12 @@
   <h3 align="center">Good Games</h3>
 
   <p align="center">
-    Good Games is an game cataloging website that allows individuals to search its database of games and reviews reviews. Users can sign up and register to add games to their library catalogs and play lists. They can also create their own groups of games they are playing and want to play.
+    GoodGames is an game cataloging website that allows individuals to rate, comment on, and browse video games of all types. Users can sign up and register to add games to their Game Center to let others know what games they want to play, what they are currently playing, and what they have already played.
     <br />
     <a href="https://github.com/RoodeAwakening/GoodGames"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/RoodeAwakening/GoodGames">View Demo</a>
+    <a href="https://goodgames-a.herokuapp.com/login/demo">View Demo</a>
     ·
     <a href="https://github.com/RoodeAwakening/GoodGames/issues">Report Bug</a>
     ·
@@ -80,6 +80,7 @@ Here's a blank template to get started:
 * [JavaScript]()
 * [Pug]()
 * [HTML]()
+* [CSS]()
 
 
 
@@ -106,8 +107,21 @@ Here is everything we need you to do to get started with Good Games.
    ```sh
    npm install
    ```
+3. Add a '.env' with your environment variables to the root of your local directory
 
-
+4. Create a postgreSQL user
+    ```sh
+    CREATE USERS <<your username>> WITH PASSWORD <<your password>> CREATEDB
+    ```
+5. Create your database
+    ```sh
+    npx dotenv sequelize db:create
+    ```
+6. Migrate and seed your database
+    ```sh
+    npx dotenv sequelize db:migrate
+    npx dotenv sequelize db:seed:all
+    ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
