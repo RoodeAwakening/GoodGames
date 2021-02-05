@@ -3,14 +3,14 @@ body {
   background-image: url(../images/retro-background.jpg);
   background-position: center;
   background-size: cover;
-  position: absolute;
+  height: -webkit-fill-available;
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Ubuntu', sans-serif;
   color: #2c2c2c;
 }
 
-/* h1 {
-  padding: 15px;
-} */
 .welcome {
   display: grid;
   flex-direction: column;

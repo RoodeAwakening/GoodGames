@@ -8,14 +8,14 @@
   text-transform: uppercase;
   background-color:var(--purple);
   height: 55px;
-  }
+}
 
 .navbar_logo{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3px;
-  
+
 }
 
 .navbar_Img{
@@ -25,7 +25,7 @@
     padding-top: 10px;
     padding-right: 5px;
     padding-left: 7px;
-    
+
 }
 
 .navbar_search{
@@ -63,7 +63,7 @@ width: auto;
 .navbar_list li{
   display: flex;
   list-style: none;
-  
+
   }
 
 .navbar_list a:hover{
@@ -92,7 +92,7 @@ form{
   text-transform: uppercase;
   text-decoration: underline;
   border: none;
-  
+
 }
 
 #navbar_logout{
