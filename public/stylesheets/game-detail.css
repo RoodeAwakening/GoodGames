@@ -1,13 +1,28 @@
 body {
   background-color: #e8e8e8;
-  font-family: "Ubuntu", sans-serif;
-  color: #30475e;
+  background-image: url(../images/retro-background.jpg);
+  background-position: center;
+  background-size: cover;
+  font-family: 'Ubuntu', sans-serif;
+  color: #2c2c2c;
   font-size: 18px;
+}
+
+button {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.head {
+  background-color: rgba(199, 199, 199, 0.85);
+  border-radius: 1em;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .game-title {
   display: flex;
-  margin: 40px 40px;
+  /* margin: 40px 40px; */
+  padding-top: 40px;
   text-align: center;
   justify-content: center;
 }
@@ -33,10 +48,8 @@ body {
 .game-container-background {
   display: grid;
   align-content: center;
-  border-image-repeat: repeat;
   width: 1000px;
-  align-self: center;
-  grid-template-columns: 4fr 2fr;
+  grid-template-columns: 4fr 3fr;
   padding: 0px;
   margin: auto;
 }
@@ -63,14 +76,20 @@ body {
 
 .up {
   background-color: #1ce90a;
-  box-shadow: 0px 0px 20px 5px #1ce90a;
   margin: 1em 1em;
+}
+
+.up:hover {
+  box-shadow: 0px 0px 20px 5px #1ce90a;
 }
 
 .down {
   background-color: #d80e0e;
-  box-shadow: 0px 0px 20px 5px rgb(211, 16, 9);
   margin: 1em 1em;
+}
+
+.down:hover {
+  box-shadow: 0px 0px 20px 5px rgb(211, 16, 9);
 }
 
 .game-rating {
@@ -99,13 +118,15 @@ body {
 .thumb {
   width: 30px;
   height: auto;
+  margin: 10px;
 }
 
 .details {
   font-style: normal;
   font-size: small;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
 }
 
 .detail_images {
@@ -117,8 +138,7 @@ body {
 .game-genre,
 .game-players {
   font-weight: normal;
-  margin: 0;
-  padding-right: 1em;
+  margin: 1em;
 }
 
 .game-comment-form {
@@ -159,6 +179,11 @@ body {
 
 .statusBtn {
   margin-top: 1em;
+  background-color: #30475e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
 }
 
 .statusBtn:hover {

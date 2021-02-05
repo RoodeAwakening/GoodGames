@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-    
+
     const voteButtons = document.querySelectorAll('.voteBtn')
 
     for (let i = 0; i < voteButtons.length; i++) {
@@ -38,7 +38,6 @@ window.addEventListener("load", (event) => {
 
         statusBtn.addEventListener("click", async (event) => {
             event.preventDefault();
-            
 
             const gameId = event.target.id.split("-")[1];
             const value = event.target.id.split("-")[0];
@@ -50,8 +49,11 @@ window.addEventListener("load", (event) => {
                 status = "played";
             } else if (value === "playing") {
                 status = "playing";
-            } else if(value === "delete"){
-                status = "delete"
+            } else if (value === "delete") {
+                status = "delete";
+                statusBtns.forEach(button => {
+                    button.style.backgroundColor = "#30475e";
+                })
             }
 
             const res = await fetch(`/api/games/${gameId}/statuses`, {
@@ -63,26 +65,15 @@ window.addEventListener("load", (event) => {
             });
             const data = await res.json();
 
-            // console.log(data)
-            // statusBtns.forEach(statusBtn => {
-
-            //     let list = statusBtn.classList
-            //     list.replace('red', 'green')
-                
-            // });
-            
             const nonTargets = statuses.filter(status => status != data.gameStatus.status)
-            // console.log(nonTargets)
             const nonTarget1 = document.getElementById(`${nonTargets[0]}-${data.gameStatus.gameId}`)
             const nonTarget2 = document.getElementById(`${nonTargets[1]}-${data.gameStatus.gameId}`)
             const targetBtn = document
             .getElementById(`${data.gameStatus.status}-${data.gameStatus.gameId}`)
 
-            nonTarget1.style.backgroundColor = '#e8e8e8'
-            nonTarget2.style.backgroundColor = "#e8e8e8"
+            nonTarget1.style.backgroundColor = "#30475e";
+            nonTarget2.style.backgroundColor = "#30475e";
             targetBtn.style.backgroundColor = "red";
-        })
-    }
-    
-
-})
+        });
+    };
+});

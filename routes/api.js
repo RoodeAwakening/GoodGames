@@ -18,38 +18,34 @@ router.post('/:id/ratings', asyncHandler (async (req, res) => {
   await db.Rating.create({ userId, gameId, yesOrNoVote })
   const allRatings = await db.Rating.findAll({ where: { gameId } });
   let newRating = await calcRating(allRatings);
- 
+
   res.json({ newRating })
 }))
 
 router.post("/:id/statuses", asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
   const { gameId, status } = req.body;
-let gameStatus;
+  let gameStatus;
+
   if (status === 'delete') {
     await db.GameStatus.destroy({ where: { userId, gameId }});
 
   } else {
-    const currentStatus = await db.GameStatus.findOne({where :{
-      userId,
-      gameId
-  }})
+    const currentStatus = await db.GameStatus.findOne({
+      where: {
+        userId,
+        gameId
+      }
+    });
+
     if (currentStatus) {
-      gameStatus =  await currentStatus.update({status})
+      gameStatus =  await currentStatus.update({ status })
       res.json({ gameStatus });
-    }else{
-     gameStatus = await db.GameStatus.create({ userId, gameId, status });
-    res.json({ gameStatus });
+    } else {
+      gameStatus = await db.GameStatus.create({ userId, gameId, status });
+      res.json({ gameStatus });
     }
   }
 }));
-
-// router.get('/:id', asyncHandler(async(req, res)=>{
-//   const userId = req.session.auth.userId;
-//   const gameId = req.params.id;
-
-//   const gameStatus = await db.GameStatus.findOne({where:{userId, gameId}})
-//   res.json({gameStatus})
-// }))
 
 module.exports = router;

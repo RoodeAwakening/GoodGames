@@ -33,12 +33,12 @@ block append head
                     div(class="game-voting")
                             form(id='ratingsBtns' action=`/api/games/${game.id}/ratings`, method="post")
                                 div
-                                    img(class='thumb' src="/images/thumbUp.png", alt="thumbUp", srcset="")
-                                    button(id=`1-${game.id}` class="voteBtn up" type="submit" value="true") Recommend
+                                    button(id=`1-${game.id}` class="voteBtn up" type="submit" value="true")
+                                        img(class='thumb' src="/images/thumbs-up-black.png", alt="thumbUp", srcset="")
                                 div
-                                    button(id=`2-${game.id}` class="voteBtn down" type="submit" value="false") Not Recommend
-                                    img(class='thumb' src="/images/thumbDown.png", alt="thumbDown", srcset="")
-                                div     
+                                    button(id=`2-${game.id}` class="voteBtn down" type="submit" value="false")
+                                        img(class='thumb' src="/images/thumbs-down-black.png", alt="thumbDown", srcset="")
+                                div
                     div(class="game-comment-container")
                         form(class="game-comment-form" method="post" action=`/games/${game.id}`)
                             input(type="hidden" value=csrfToken name="_csrf")
