@@ -1,8 +1,9 @@
 .navbar{
   display: flex;
-
+  font-size: 13px;
   text-transform: uppercase;
   background-color: #184f83;
+  height: 55px;
   }
 
 .navbar_logo{
@@ -10,14 +11,17 @@
   justify-content: center;
   align-items: center;
   padding: 3px;
+  
 }
 
 .navbar_Img{
   display: flex;
   justify-content: flex-start;
-    width: 3em;
-    padding-right: 1em;
-    padding-left: 1em;
+    width: 80px;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-left: 7px;
+    
 }
 
 .navbar_search{
@@ -25,8 +29,8 @@
   justify-content: center;
   padding: 1px 26px 1px 8px;
   margin: 0px;
-  flex: 1;
-  width: 33%;
+  flex: 1px;
+  width: 200px;
   align-items: center;
 }
 
@@ -34,6 +38,10 @@
   display: flex;
   align-content: center;
   height: 21px;
+}
+
+.searchBar{
+  width: 250px;
 }
 
 
@@ -44,6 +52,7 @@ justify-content: flex-end;
 align-items: center;
 padding: 1px 1px 1px 1px;
 margin: 0px;
+width: auto;
 
 }
 
@@ -84,6 +93,7 @@ form{
 
 #navbar_logout{
   padding: 4px;
+  width: 40px;
 }
 
 
