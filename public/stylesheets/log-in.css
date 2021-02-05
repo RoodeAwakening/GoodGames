@@ -1,8 +1,6 @@
 .login_body {
 background-color: #e8e8e8;
 font-family: 'Ubuntu', sans-serif;
-
- 
 }
 
 .background_image{
@@ -14,8 +12,6 @@ font-family: 'Ubuntu', sans-serif;
     background-image: url(../images/login_background.jpg);
 }
 
-
-
 .login_content{
     opacity: 1;
 }
@@ -23,9 +19,6 @@ font-family: 'Ubuntu', sans-serif;
 #title{
     height: 75px;
     background-repeat: no-repeat;
-    
-    
-    
 }
 
 .main {
@@ -44,7 +37,7 @@ box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     padding-top: 20px;
     font-family: 'Ubuntu', sans-serif;
     color: #30475e
-    
+
 }
 .sign {
 padding-top: 35px;
@@ -57,7 +50,7 @@ justify-content: center;
 }
 .missing {
 padding-top: 20px;
-color: #f05454;
+color: #731e8d;
 font-family: 'Ubuntu', sans-serif;
 font-weight: bold;
 font-size: 12px;
@@ -66,24 +59,24 @@ justify-content: center;
 }
 
 .un {
-width: 76%;
-color: rgb(38, 50, 56);
-font-weight: 700;
-font-size: 14px;
-letter-spacing: 1px;
-background: rgba(136, 126, 126, 0.04);
-padding: 10px 20px;
-border: none;
-border-radius: 20px;
-outline: none;
-box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 50px;
-margin-left: 46px;
-text-align: center;
-margin-bottom: 27px;
-align-items: center;
-font-family: 'Ubuntu', sans-serif;
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .error {
@@ -93,19 +86,19 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 .submit {
-cursor: pointer;
-border-radius: 5em;
-color: #fff;
-background: linear-gradient(to right, #f05454 , #ecb8b8);
-border: 0;
-padding-left: 40px;
-padding-right: 40px;
-padding-bottom: 10px;
-padding-top: 10px;
-font-family: 'Ubuntu', sans-serif;
-margin-left: 35%;
-font-size: 13px;
-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #731e8d , #ecb8b8);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
 @media (max-width: 600px) {
