@@ -31,6 +31,7 @@ window.addEventListener("load", (event) => {
     }
 
     const statusBtns = document.querySelectorAll(".statusBtn");
+    const statuses = ['toPlay', 'playing', 'played']
 
     for (let i = 0; i < statusBtns.length; i++) {
         const statusBtn = statusBtns[i];
@@ -62,35 +63,26 @@ window.addEventListener("load", (event) => {
             });
             const data = await res.json();
 
-            statusBtns.forEach(statusBtn => {
+            // console.log(data)
+            // statusBtns.forEach(statusBtn => {
 
-                let list = statusBtn.classList
-                list.replace('red', 'green')
+            //     let list = statusBtn.classList
+            //     list.replace('red', 'green')
                 
-            });
-
+            // });
+            
+            const nonTargets = statuses.filter(status => status != data.gameStatus.status)
+            // console.log(nonTargets)
+            const nonTarget1 = document.getElementById(`${nonTargets[0]}-${data.gameStatus.gameId}`)
+            const nonTarget2 = document.getElementById(`${nonTargets[1]}-${data.gameStatus.gameId}`)
             const targetBtn = document
             .getElementById(`${data.gameStatus.status}-${data.gameStatus.gameId}`)
 
+            nonTarget1.style.backgroundColor = '#e8e8e8'
+            nonTarget2.style.backgroundColor = "#e8e8e8"
             targetBtn.style.backgroundColor = "red";
         })
     }
+    
 
-    // const getResult = async()=>{
-    //     let path = window.location.href
-    //     let splitPath = path.split('/')
-    //     let pathId = splitPath[splitPath.length -1 ]
-    //     const result = await fetch(`/api/games/${pathId}`,{
-    //         method: "GET",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         }
-    //     })
-    //     let gameData = await result.json()
-    //     let element = document.getElementById(`${gameData.gameStatus.status}-${gameData.gameStatus.gameId}`)
-    //     console.log(gameData);
-    //             console.log(gameData.gameStatus.status);
-    //     element.style.backgroundColor = 'red'
-    // }
-    // getResult()
 })
