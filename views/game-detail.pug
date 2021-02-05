@@ -24,7 +24,7 @@ block append head
                                     button(id=`2-${game.id}` class="voteBtn down" type="submit" value="false") Not Recommend
                                     img(class='thumb' src="/images/thumbDown.png", alt="thumbDown", srcset="")
                 div(class="game-status-container")
-                    form(class="status-form" action=`/users/${userId}` method="post")
+                    form(class="status-form" id="status-form" action=`/users/${userId}` method="post")
                         label Add or Change Your Game Status:
                         button(id=`toPlay-${game.id}` class=`statusBtn ${toPlay}`) Want to Play
                         button(id=`playing-${game.id}` class=`statusBtn ${playing}`) Currently Playing
