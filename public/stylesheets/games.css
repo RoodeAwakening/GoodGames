@@ -5,15 +5,28 @@ body {
   background-size: cover;
   position: absolute;
   font-family: 'Ubuntu', sans-serif;
-  color: #30475e;
+  color: #2c2c2c;
 }
 
+/* h1 {
+  padding: 15px;
+} */
 .welcome {
-  margin: 2% 4%;
+  display: grid;
+  flex-direction: column;
+  text-align: center;
+  margin: 40px 12px 12px 12px;
+  color: #2c2c2c;
+  background-color: rgba(199, 199, 199, 0.85);
+  border-radius: .5em;
+  width: 85%;
+  padding: 15px;
+  font-size: 35px;
 }
 
-.subheader {
+.subheader p {
   font-size: 18px;
+  margin: 10px 0;
   font-weight: normal;
 }
 
@@ -28,7 +41,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 1.2em;
-  background-color: #FFFFFF;
+  background-color: rgba(199, 199, 199, 0.90);
   width: 300px;
   height: 230px;
   border-radius: 1em;
