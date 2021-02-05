@@ -205,3 +205,21 @@ width: auto;
   padding: 8px 3px;
   color: rgb(150, 248, 3);
 }
+
+
+@media(max-width:1024px) {
+ 
+
+  footer {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .bottom p {
+    text-align: center;
+  }
+}
