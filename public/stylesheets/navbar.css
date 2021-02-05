@@ -120,11 +120,12 @@ footer {
   display: flex;
   width: 100%;
   /* text-transform: capitalize; */
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 5px;
+  padding-bottom: 0px;
   margin-top: 80px;
   margin-bottom: 0px;
   height: 200px;
+  height: fit-content;
 }
 
 .footer_content{
