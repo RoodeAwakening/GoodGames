@@ -19,8 +19,6 @@ body {
   padding-bottom: 30px;
 }
 
-
-
 .welcome {
   display: grid;
   flex-direction: column;
@@ -49,13 +47,19 @@ body {
 
 }
 
+.image-header {
+  padding-top: 2%;
+}
+
 #welcome{
-  width: 700px
+  width: 700px;
+  padding: 2%;
 }
 
 .subheader p {
   font-size: 18px;
   margin: 10px 0;
+  padding: 1%;
   font-weight: normal;
   display: flex;
   justify-content: center;
