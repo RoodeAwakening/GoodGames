@@ -13,6 +13,19 @@ block append head
                     img(src=`${game.image}`)
                 div(class="game-description")
                     p= game.description
+                .details
+                    div(class="game-console")
+                        img(class='detail_images' src="/images/ico_console.png", alt="", srcset="")
+                        p Commonly played on #{game.Console.name}
+                    div(class="game-publisher")
+                        img(class='detail_images' src="/images/ico_building.png", alt="", srcset="")
+                        p Made by #{game.Publisher.name}
+                    div(class="game-genre")
+                        img(class='detail_images' src="/images/ico_genre.png", alt="", srcset="")
+                        p Genre: #{game.Genre.name}
+                    div(class="game-players")
+                        img(class='detail_images' src="/images/ico_players.png", alt="", srcset="")
+                        p Max Players: #{game.maxPlayers}
                 div(class="game-rating")
                     p(id="percentage") #{game.rating}% player rating
                     div(class="game-voting")
@@ -23,27 +36,25 @@ block append head
                                 div
                                     button(id=`2-${game.id}` class="voteBtn down" type="submit" value="false") Not Recommend
                                     img(class='thumb' src="/images/thumbDown.png", alt="thumbDown", srcset="")
+                                div     
                 div(class="game-status-container")
                     form(class="status-form" action=`/users/${userId}` method="post")
-                        label Add or Change Your Game Status:
-                        button(id=`toPlay-${game.id}` class=`statusBtn ${toPlay}`) Want to Play
-                        button(id=`playing-${game.id}` class=`statusBtn ${playing}`) Currently Playing
-                        button(id=`played-${game.id}` class=`statusBtn ${played}`) Have Already Played
-                        button(id=`delete-${game.id}` class=`statusBtn`) Remove from Game Center
-                div(class="game-console")
-                    p Commonly played on #{game.Console.name}
-                div(class="game-publisher")
-                    p Made by #{game.Publisher.name}
-                div(class="game-genre")
-                    p Genre: #{game.Genre.name}
+                        div
+                            label Add or Change Your Game Status:
+                        div
+                            button(id=`toPlay-${game.id}` class=`statusBtn ${toPlay}`) Want to Play
+                            button(id=`playing-${game.id}` class=`statusBtn ${playing}`) Currently Playing
+                            button(id=`played-${game.id}` class=`statusBtn ${played}`) Have Already Played
+                            button(id=`delete-${game.id}` class=`statusBtn`) Remove from Game Center
                 div(class="game-comment-container")
                     form(class="game-comment-form" method="post" action=`/games/${game.id}`)
                         input(type="hidden" value=csrfToken name="_csrf")
                         div(class="game-comment-form__add")
                             label Add a comment below:
                                 div
-                                    textarea(name="comment" placeholder="write your comment here")
+                                    textarea(id='comment_box' name="comment" placeholder="write your comment here")
                                 div
                                     button(type="submit") Add Comment
                     each comment in allComments
                         p(class="game-comment")= comment.comment
+                        p(class="game-comment")= comment.User.username

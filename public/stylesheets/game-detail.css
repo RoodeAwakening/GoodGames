@@ -82,17 +82,48 @@ body {
   height: auto;
 }
 
+.status-form{
+  display: block;
+  margin: 1em;
+}
 
+.statusBtn{
+  margin-top: 1em;
+}
+
+.statusBtn:hover{
+  box-shadow: 0px 0px 10px 5px rgb(211, 16, 9);
+  background-image: linear-gradient(to right, #ff000075 0%, #ff0000 51%, #ff00007e 100%);
+}
+
+
+.details{
+  font-style: normal;
+  font-size: small;
+    display: flex;
+    justify-content: center;
+}
+
+.detail_images{
+  width: 30px;
+}
 
 
 .game-console,
 .game-publisher,
-.game-genre {
+.game-genre,
+.game-players {
   font-weight: normal;
   margin: 0;
+  padding-right: 1em;
 }
 
 .game-comment-form {
   display: grid;
 
+}
+
+#comment_box{
+  width: 400px;
+  height: 50px;
 }

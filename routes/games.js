@@ -45,7 +45,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
         include: [db.Console, db.Publisher, db.Genre, db.GameStatus]
     });
     const allRatings = await db.Rating.findAll({ where: { gameId } });
-    const allComments = await db.Comment.findAll({ where: { gameId } });
+    const allComments = await db.Comment.findAll({ where: { gameId }, include: db.User});
+    console.log(allComments);
     const status = await db.GameStatus.findOne({where :{
         userId,
         gameId
@@ -54,7 +55,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     let toPlay = 'green'
     let playing = 'green'
     let played = 'green'
-    console.log(status);
+    
 
     if (status) {
         
