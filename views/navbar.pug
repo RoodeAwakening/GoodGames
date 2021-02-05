@@ -2,10 +2,12 @@ html
   head
     link(rel='stylesheet' href='/stylesheets/navbar.css')
     script(src="/javascripts/search.js")
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet")
     block head
       .navbar
         .navbar_logo
-            a(href='/games') 
+            a(href='/games')
               img(class='navbar_Img' src="/images/logo.png", alt="", srcset="")
         .navbar_search
           form(action=`/search/games/1`, method="post")
@@ -20,8 +22,6 @@ html
           a(href=`/users/${userId}`) My Comments
             li
           form(action="/users/logout", method="post")
-            button.logout(type="submit") 
+            button.logout(type="submit")
               img(class='navbar_Img' id='navbar_logout' src="/images/logout.png", alt="", srcset="")
               li
-                 
-

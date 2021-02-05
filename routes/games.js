@@ -6,7 +6,7 @@ const rating = require('../db/models/rating');
 const { csrfProtection, asyncHandler } = require('./utils');
 
 router.get('/', asyncHandler(async (req, res) => {
-    if(!req.session.auth){
+    if (!req.session.auth) {
         res.redirect('/login')
     }
 
@@ -14,13 +14,13 @@ router.get('/', asyncHandler(async (req, res) => {
     const games = await db.Game.findAll({
         include: db.Rating
     });
-    
-    for(let i = 0; i < games.length; i++){
+
+    for (let i = 0; i < games.length; i++) {
         let total = 0
         const ratings = games[i].Ratings
-        for(let j = 0; j < ratings.length; j++){
+        for (let j = 0; j < ratings.length; j++) {
             const rating = ratings[j]
-            if(rating.yesOrNoVote){
+            if (rating.yesOrNoVote) {
                 total+=1
             }
         }
@@ -34,45 +34,40 @@ router.get('/', asyncHandler(async (req, res) => {
 }));
 
 router.get('/:id', asyncHandler(async (req, res) => {
-    if(!req.session.auth){
+    if (!req.session.auth) {
         res.redirect('/login')
     }
     const userId = req.session.auth.userId;
     const gameId = req.params.id
 
-    
+
     const game = await db.Game.findByPk(gameId, {
         include: [db.Console, db.Publisher, db.Genre, db.GameStatus]
     });
     const allRatings = await db.Rating.findAll({ where: { gameId } });
     const allComments = await db.Comment.findAll({ where: { gameId }, include: db.User});
-    console.log(allComments);
-    const status = await db.GameStatus.findOne({where :{
-        userId,
-        gameId
-    }})
+    const status = await db.GameStatus.findOne({where: { userId, gameId }});
 
     let toPlay = 'green'
     let playing = 'green'
     let played = 'green'
-    
 
     if (status) {
-        
+
         if (status.status === 'toPlay') {
             toPlay = 'red'
-        }else if(status.status === 'playing'){
+        } else if (status.status === 'playing') {
             playing = 'red'
-        }else{
+        } else {
             played = 'red'
         }
     }
-    
+
 
     let total = 0
-    for (let i = 0; i < allRatings.length; i++){
+    for (let i = 0; i < allRatings.length; i++) {
         const rating = allRatings[i]
-        if (rating.yesOrNoVote){
+        if (rating.yesOrNoVote) {
             total+=1
         }
     }
@@ -81,8 +76,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
     } else {
         game.rating = Math.floor((total/allRatings.length) * 100)
     }
-    
-    res.render('game-detail', { game, allComments, toPlay, playing, played, status , userId })
+
+    res.render('game-detail', { game, allComments, toPlay, playing, played, status, userId })
 }))
 
 

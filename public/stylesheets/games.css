@@ -1,5 +1,9 @@
 body {
   background-color: #e8e8e8;
+  background-image: url(../images/retro-background.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
   font-family: 'Ubuntu', sans-serif;
   color: #30475e;
 }
