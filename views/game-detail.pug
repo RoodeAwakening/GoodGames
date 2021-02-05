@@ -33,11 +33,9 @@ block append head
                     div(class="game-voting")
                             form(id='ratingsBtns' action=`/api/games/${game.id}/ratings`, method="post")
                                 div
-                                    button(id=`1-${game.id}` class="voteBtn up" type="submit" value="true")
-                                        img(class='thumb' src="/images/thumbs-up-black.png", alt="thumbUp", srcset="")
+                                    button(id=`1-${game.id}` class="voteBtn up" type="submit" value="true") 👍
                                 div
-                                    button(id=`2-${game.id}` class="voteBtn down" type="submit" value="false")
-                                        img(class='thumb' src="/images/thumbs-down-black.png", alt="thumbDown", srcset="")
+                                    button(id=`2-${game.id}` class="voteBtn down" type="submit" value="false") 👎
                                 div
                     div(class="game-comment-container")
                         form(class="game-comment-form" method="post" action=`/games/${game.id}`)

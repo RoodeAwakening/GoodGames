@@ -111,8 +111,14 @@ Here is everything we need you to do to get started with Good Games.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### An easy to use login when a pre configured Demo User.
+![Login](public/videos/1_login.gif)
+### A plethora of games to view.
+![Select Game](public/videos/2_selecting_game.gif)
+### Review, comment and add to your game center.
+![Like & Comment](public/videos/3_like_comment_save.gif)
+### Game center where you can view all of your games and comments.
+![Profile](public/videos/4_profile_page.gif)
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
