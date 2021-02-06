@@ -51,10 +51,6 @@ button.down {
   background-image: game;
 }
 
-.game-comment-container {
-  padding-top: 10px;
-}
-
 .game-container-background {
   display: grid;
   align-content: center;
@@ -74,7 +70,7 @@ button.down {
 .game-description {
   display: flex;
   justify-content: center;
-  margin: 1.1em 10%;
+  margin: 1.1em 5%;
   font-size: 18px;
   font-weight: normal;
 }
@@ -120,6 +116,7 @@ button.down {
   justify-content: center;
   align-items: center;
   display: flex;
+  margin-bottom: 0;
 }
 
 #ratingsBtns {
@@ -152,12 +149,16 @@ button.down {
 .game-players {
   font-weight: normal;
   margin: 1em;
+  text-align: center;
 }
 
 .game-comment-form {
   display: grid;
   padding: 20px;
-  border-top: thin solid grey;
+}
+
+.form-title {
+  margin: 10px 0;
 }
 
 .game-detail-comments {
@@ -172,11 +173,15 @@ button.down {
 
 .game-comment-user {
   padding-right: 10px;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 #comment_box {
   width: 400px;
   height: 50px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .status-form {
