@@ -4,9 +4,12 @@ html
   head
     title="GoodGames"
     link(rel='stylesheet' href='/stylesheets/sign-log.css')
-  body
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet")
+  body.background_image
     +validationErrorSummary(errors)
-    h1(id='title') Welcome to GoodGames!
+    #title
+      img(src="/images/title_header.png", alt="", srcset="")
     form(action='/signup' method='post')
         input(type='hidden' name='_csrf' method='post' value=csrfToken)
         div(class="main")
