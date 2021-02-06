@@ -12,6 +12,12 @@ button {
   font-family: 'Ubuntu', sans-serif;
 }
 
+button.up,
+button.down {
+  font-size: 30px;
+
+}
+
 .red {
   background-color: red;
 }
@@ -119,7 +125,7 @@ button {
 #ratingsBtns {
   display: flex;
   justify-content: center;
-  
+
 }
 
 .thumb {
@@ -151,7 +157,7 @@ button {
 .game-comment-form {
   display: grid;
   padding: 20px;
-  border-top: solid grey;
+  border-top: thin solid grey;
 }
 
 .game-detail-comments {
