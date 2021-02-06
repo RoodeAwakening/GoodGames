@@ -31,6 +31,7 @@ window.addEventListener("load", (event) => {
     }
 
     const statusBtns = document.querySelectorAll(".statusBtn");
+    console.log(statusBtns);
     const statuses = ['toPlay', 'playing', 'played']
 
     for (let i = 0; i < statusBtns.length; i++) {
@@ -52,7 +53,7 @@ window.addEventListener("load", (event) => {
             } else if (value === "delete") {
                 status = "delete";
                 statusBtns.forEach(button => {
-                    button.style.backgroundColor = "#30475e";
+                    button.style.backgroundColor = "#e8e8e8";
                 })
             }
 
@@ -66,13 +67,14 @@ window.addEventListener("load", (event) => {
             const data = await res.json();
 
             const nonTargets = statuses.filter(status => status != data.gameStatus.status)
+            console.log(nonTargets);
             const nonTarget1 = document.getElementById(`${nonTargets[0]}-${data.gameStatus.gameId}`)
             const nonTarget2 = document.getElementById(`${nonTargets[1]}-${data.gameStatus.gameId}`)
             const targetBtn = document
             .getElementById(`${data.gameStatus.status}-${data.gameStatus.gameId}`)
 
-            nonTarget1.style.backgroundColor = "#30475e";
-            nonTarget2.style.backgroundColor = "#30475e";
+            nonTarget1.style.backgroundColor = "#e8e8e8";
+            nonTarget2.style.backgroundColor = "#e8e8e8";
             targetBtn.style.backgroundColor = "red";
         });
     };

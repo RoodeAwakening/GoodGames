@@ -68,7 +68,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://goodgames-a.herokuapp.com/login)
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
@@ -163,10 +163,11 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Derek Roode - [LinkedIn](https://www.linkedin.com/in/derek-roode-9014a796/)
+Ted Anton - [LinkedIn](https://www.linkedin.com/in/ted-anton/)
+Rob Whitacre - [LinkedIn](https://www.linkedin.com/in/rob-whitacre-825434113/)
 
 Project Link: [https://github.com/RoodeAwakening/GoodGames](https://github.com/RoodeAwakening/GoodGames)
-
 
 
 <!-- ACKNOWLEDGEMENTS -->
