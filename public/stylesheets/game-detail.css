@@ -12,6 +12,10 @@ button {
   font-family: 'Ubuntu', sans-serif;
 }
 
+.red {
+  background-color: red;
+}
+
 .head {
   background-color: rgba(199, 199, 199, 0.85);
   border-radius: 1em;
@@ -21,7 +25,6 @@ button {
 
 .game-title {
   display: flex;
-  /* margin: 40px 40px; */
   padding-top: 40px;
   text-align: center;
   justify-content: center;
@@ -112,10 +115,6 @@ button {
   justify-content: center;
 }
 
-.red {
-  background-color: red;
-}
-
 .thumb {
   width: 30px;
   height: auto;
@@ -144,6 +143,8 @@ button {
 
 .game-comment-form {
   display: grid;
+  padding: 20px;
+  border-top: solid grey;
 }
 
 .game-detail-comments {
@@ -180,8 +181,8 @@ button {
 
 .statusBtn {
   margin-top: 1em;
-  background-color: #30475e;
-  color: white;
+  /* background-color: #30475e; */
+  color: black;
   font-size: 16px;
   font-weight: bold;
   padding: 5px;
