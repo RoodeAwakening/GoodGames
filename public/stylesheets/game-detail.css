@@ -78,6 +78,9 @@ button {
 .up {
   background-color: #1ce90a;
   margin: 1em 1em;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
 }
 
 .up:hover {
@@ -87,6 +90,9 @@ button {
 .down {
   background-color: #d80e0e;
   margin: 1em 1em;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
 }
 
 .down:hover {
@@ -110,6 +116,7 @@ button {
 #ratingsBtns {
   display: flex;
   justify-content: center;
+  
 }
 
 .red {
