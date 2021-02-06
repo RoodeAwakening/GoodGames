@@ -163,9 +163,9 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Derek Roode - [LinkedIn](https://www.linkedin.com/in/derek-roode-9014a796/)
-Ted Anton - [LinkedIn](https://www.linkedin.com/in/ted-anton/)
-Rob Whitacre - [LinkedIn](https://www.linkedin.com/in/rob-whitacre-825434113/)
+* Derek Roode - [LinkedIn](https://www.linkedin.com/in/derek-roode-9014a796/)
+* Ted Anton - [LinkedIn](https://www.linkedin.com/in/ted-anton/)
+* Rob Whitacre - [LinkedIn](https://www.linkedin.com/in/rob-whitacre-825434113/)
 
 Project Link: [https://github.com/RoodeAwakening/GoodGames](https://github.com/RoodeAwakening/GoodGames)
 
