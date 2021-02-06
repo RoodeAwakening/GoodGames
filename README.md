@@ -19,7 +19,7 @@
     <img src="public/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Good Games</h3>
+  <h3 align="center">GoodGames</h3>
 
   <p align="center">
     GoodGames is an game cataloging website that allows individuals to rate, comment on, and browse video games of all types. Users can sign up and register to add games to their Game Center to let others know what games they want to play, what they are currently playing, and what they have already played.
@@ -68,7 +68,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://goodgames-a.herokuapp.com/login)
+[Click here to view GoodGames live on the web!](https://goodgames-a.herokuapp.com/login)
+<br>
+</br>
+![homepage-screenshot](public/images/games-homepage.png)
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
@@ -91,7 +94,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-Here is everything we need you to do to get started with Good Games.
+Here is everything we need you to do to get started with GoodGames.
 * npm
   ```sh
   npm install npm@latest -g
@@ -125,7 +128,7 @@ Here is everything we need you to do to get started with Good Games.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-### An easy to use login when a pre configured Demo User.
+### An easy-to-use login with a pre-configured Demo User.
 ![Login](public/videos/1_login.gif)
 ### A plethora of games to view.
 ![Select Game](public/videos/2_selecting_game.gif)
