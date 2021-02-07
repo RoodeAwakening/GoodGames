@@ -14,9 +14,9 @@ block append head
         div(class="profile-sections")
             div(class="my-games-container")
                 div(class="toPlay-container")
-                    ul(class="toPlay")
+                    ul(class="list-title")
                         label Want to Play
-                            div(class="game-list")
+                            div(class="toPlay game-list")
                                 each game in toPlay
                                     div(class="game-title-and-img")
                                         li
@@ -25,9 +25,9 @@ block append head
                                             a(href=`/games/${game.id}`)
                                                 img(class="game-img" src=`${game.image}`, alt="Game Image")
                 div(class="playing-container")
-                    ul(class="playing")
+                    ul(class="list-title")
                         label Currently Playing
-                        div(class="game-list")
+                        div(class="playing game-list")
                                 each game in playing
                                     div(class="game-title-and-img")
                                         li
@@ -36,9 +36,9 @@ block append head
                                             a(href=`/games/${game.id}`)
                                                 img(class="game-img" src=`${game.image}`, alt="Game Image")
                 div(class="played-container")
-                    ul(class="played")
+                    ul(class="list-title")
                         label Have Played
-                        div(class="game-list")
+                        div(class="played game-list")
                                 each game in played
                                     div(class="game-title-and-img")
                                         li

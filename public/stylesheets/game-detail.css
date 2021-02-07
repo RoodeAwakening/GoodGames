@@ -12,12 +12,6 @@ button {
   font-family: 'Ubuntu', sans-serif;
 }
 
-button.up,
-button.down {
-  font-size: 30px;
-
-}
-
 .red {
   background-color: red;
 }
@@ -80,12 +74,17 @@ button.down {
   justify-content: center;
 }
 
-.up {
-  background-color: #1ce90a;
-  margin: 1em 1em;
-  font-size: 20px;
+.up,
+.down {
+  margin: .5em;
+  font-size: 30px;
   width: 50px;
   height: 50px;
+  border-radius: .2em;
+}
+
+.up {
+  background-color: #1ce90a;
 }
 
 .up:hover {
@@ -94,10 +93,6 @@ button.down {
 
 .down {
   background-color: #d80e0e;
-  margin: 1em 1em;
-  font-size: 20px;
-  width: 50px;
-  height: 50px;
 }
 
 .down:hover {
@@ -116,7 +111,8 @@ button.down {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-bottom: 0;
+  margin: 0;
+  padding-top: 2em;
 }
 
 #ratingsBtns {
@@ -159,6 +155,7 @@ button.down {
 
 .form-title {
   margin: 10px 0;
+  font-size: 18px;
 }
 
 .game-detail-comments {
@@ -182,14 +179,15 @@ button.down {
   height: 50px;
   margin-top: 10px;
   margin-bottom: 5px;
+  padding: 2%;
 }
 
 .status-form {
   display: flex;
   justify-content: center;
-  margin: 1em;
+  /* margin: 1em; */
   padding-top: 7px;
-  padding-bottom: 20px;
+  padding-bottom: 3rem;
 }
 
 .status-form label {

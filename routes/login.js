@@ -14,7 +14,7 @@ router.get('/', csrfProtection, asyncHandler(async (req, res)=> {
 );
 
 //demo useer
-router.get('/demo', csrfProtection, asyncHandler(async (req, res)=> {
+router.get('/demo', csrfProtection, asyncHandler(async (req, res) => {
   res.render('login-demo', { csrfToken: req.csrfToken() })
   })
 );
@@ -32,17 +32,17 @@ router.post("/", csrfProtection, loginValidators, asyncHandler(async (req, res) 
 
   let errors = [];
   const validatorErrors = validationResult(req);
-  
+
   if (validatorErrors.isEmpty()) {
     const user = await db.User.findOne({ where: { email } });
 
     if (user !== null) {
       const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString());
-      
+
       if (passwordMatch) {
         loginUser(req, res, user);
         return res.redirect('/games');
-        
+
       }
     }
 

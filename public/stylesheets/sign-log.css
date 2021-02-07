@@ -16,8 +16,8 @@ body {
 .main {
     background-color: #FFFFFF;
     width: 400px;
-    height: 600px;
-    margin: 4em auto;
+    height: 570px;
+    margin: 5em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
@@ -39,55 +39,65 @@ body {
     font-size: 23px;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 
 .un {
-width: 76%;
-color: rgb(38, 50, 56);
-font-weight: 700;
-font-size: 14px;
-letter-spacing: 1px;
-background: rgba(136, 126, 126, 0.04);
-padding: 10px 20px;
-border: none;
-border-radius: 20px;
-outline: none;
-box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 50px;
-margin-left: 46px;
-text-align: center;
-margin-bottom: 27px;
-align-items: center;
-font-family: 'Ubuntu', sans-serif;
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.error {
-    color: red;
+.missing {
+    padding: 15px;
+    color: #731e8d;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
     display: flex;
     justify-content: center;
 }
 
+.error {
+    display: flex;
+    background-color: #e8e8e8;
+    color: red;
+    justify-content: center;
+}
+
 .submit {
-cursor: pointer;
-border-radius: 5em;
-color: #fff;
-background: linear-gradient(to right, #f05454 , #ecb8b8);
-border: 0;
-padding-left: 40px;
-padding-right: 40px;
-padding-bottom: 10px;
-padding-top: 10px;
-font-family: 'Ubuntu', sans-serif;
-margin-left: 35%;
-font-size: 13px;
-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #731e8d , #ecb8b8);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
 @media (max-width: 600px) {
-.main {
-    border-radius: 0px;
-}
-
-
+    .main {
+        border-radius: 0px;
+    }
 }

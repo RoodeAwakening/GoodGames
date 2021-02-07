@@ -1,6 +1,6 @@
 .login_body {
-background-color: #e8e8e8;
-font-family: 'Ubuntu', sans-serif;
+    background-color: #e8e8e8;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .background_image{
@@ -35,25 +35,26 @@ font-family: 'Ubuntu', sans-serif;
     padding-top: 30px;
     font-family: 'Ubuntu', sans-serif;
     color: #30475e;
+}
 
-}
 .sign {
-padding-top: 35px;
-color: #30475e;
-font-family: 'Ubuntu', sans-serif;
-font-weight: bold;
-font-size: 23px;
-align-items: center;
-justify-content: center;
+    padding-top: 35px;
+    color: #30475e;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    align-items: center;
+    justify-content: center;
 }
+
 .missing {
-padding-top: 20px;
-color: #731e8d;
-font-family: 'Ubuntu', sans-serif;
-font-weight: bold;
-font-size: 12px;
-display: flex;
-justify-content: center;
+    padding-top: 20px;
+    color: #731e8d;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
 }
 
 .un {
@@ -78,8 +79,9 @@ justify-content: center;
 }
 
 .error {
-    color: red;
     display: flex;
+    background-color: #e8e8e8;
+    color: red;
     justify-content: center;
 }
 
