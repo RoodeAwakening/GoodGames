@@ -29,7 +29,6 @@ module.exports = {
         {name: 'Activision'},
         {name: 'Microsoft'},
         {name: 'Bungie'},
-        {name: 'Atari'}
       ], {});
     },
 
