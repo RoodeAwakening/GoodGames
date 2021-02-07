@@ -41,7 +41,7 @@ block append head
                         form(class="game-comment-form" method="post" action=`/games/${game.id}`)
                             input(type="hidden" value=csrfToken name="_csrf")
                             div(class="game-comment-form__add")
-                                label Add a comment below:
+                                label(class="form-title") Add a comment below:
                                     div
                                         textarea(id='comment_box' name="comment" placeholder="write your comment here")
                                     div

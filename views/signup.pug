@@ -13,7 +13,7 @@ html
     form(action='/signup' method='post')
         input(type='hidden' name='_csrf' method='post' value=csrfToken)
         div(class="main")
-            p(class="sign" align="center") Signup
+            p(class="sign" align="center") Sign Up
                 div(class='sign')
                     input(type='text' name='username' value=user.username class='un' placeholder='Enter Username' required)
                     input(type='text' name='firstName' value=user.firstName class='un' placeholder='First Name' required)
@@ -22,3 +22,5 @@ html
                     input(type='password' name='password' class='un' placeholder='Password' required)
                     input(type='password' name='confirmPassword' class='un' placeholder='Confirm Password' required)
                     button(type='submit' class='submit') Sign Up
+                    div
+                          a(href='/login' class="missing") Already Have an Account? Click Here!

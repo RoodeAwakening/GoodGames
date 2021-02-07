@@ -31,7 +31,6 @@ window.addEventListener("load", (event) => {
     }
 
     const statusBtns = document.querySelectorAll(".statusBtn");
-    console.log(statusBtns);
     const statuses = ['toPlay', 'playing', 'played']
 
     for (let i = 0; i < statusBtns.length; i++) {
@@ -67,7 +66,6 @@ window.addEventListener("load", (event) => {
             const data = await res.json();
 
             const nonTargets = statuses.filter(status => status != data.gameStatus.status)
-            console.log(nonTargets);
             const nonTarget1 = document.getElementById(`${nonTargets[0]}-${data.gameStatus.gameId}`)
             const nonTarget2 = document.getElementById(`${nonTargets[1]}-${data.gameStatus.gameId}`)
             const targetBtn = document

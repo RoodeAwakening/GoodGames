@@ -42,13 +42,10 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 
 router.post('/logout', (req,res) => {
-
     req.session.destroy(function(err) {
-    })
-
-    res.redirect('/login')
-
-
+        
+    });
+    res.redirect('/login');
 })
 
 module.exports = router;

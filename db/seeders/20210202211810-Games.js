@@ -30,7 +30,6 @@ module.exports = {
         {title: 'Halo: Reach',description: 'The Master Chief’s iconic journey includes six games, built for PC and collected in a single integrated experience. Whether you’re a long-time fan or meeting Spartan 117 for the first time, The Master Chief Collection is the definitive Halo gaming experience.',image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1064220/header.jpg?t=1591395907',publisherId: 19,consoleId: 2,genreId: 11,maxPlayers: 16,rating: 0,},
         {title: 'Destiny 2',description: 'Destiny 2 is an action MMO with a single evolving world that you and your friends can join anytime, anywhere, absolutely free.',image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1085660/header.jpg?t=1607380522',publisherId: 20,consoleId: 2,genreId: 11,maxPlayers: 16,rating: 0,},
         {title: 'Borderlands 3',description: 'The original shooter-looter returns, packing bazillions of guns and a mayhem-fueled adventure! Blast through new worlds & enemies and save your home from the most ruthless cult leaders in the galaxy.',image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/397540/header.jpg?t=1611688304',publisherId: 8,consoleId: 1,genreId: 2,maxPlayers: 2,rating: 0,},
-        
     ], {});
   },
 

@@ -45,10 +45,6 @@ button {
   background-image: game;
 }
 
-.game-comment-container {
-  padding-top: 10px;
-}
-
 .game-container-background {
   display: grid;
   align-content: center;
@@ -68,7 +64,7 @@ button {
 .game-description {
   display: flex;
   justify-content: center;
-  margin: 1.1em 10%;
+  margin: 1.1em 5%;
   font-size: 18px;
   font-weight: normal;
 }
@@ -78,12 +74,17 @@ button {
   justify-content: center;
 }
 
-.up {
-  background-color: #1ce90a;
-  margin: 1em 1em;
-  font-size: 20px;
+.up,
+.down {
+  margin: .5em;
+  font-size: 30px;
   width: 50px;
   height: 50px;
+  border-radius: .2em;
+}
+
+.up {
+  background-color: #1ce90a;
 }
 
 .up:hover {
@@ -92,10 +93,6 @@ button {
 
 .down {
   background-color: #d80e0e;
-  margin: 1em 1em;
-  font-size: 20px;
-  width: 50px;
-  height: 50px;
 }
 
 .down:hover {
@@ -114,12 +111,14 @@ button {
   justify-content: center;
   align-items: center;
   display: flex;
+  margin: 0;
+  padding-top: 2em;
 }
 
 #ratingsBtns {
   display: flex;
   justify-content: center;
-  
+
 }
 
 .thumb {
@@ -146,12 +145,17 @@ button {
 .game-players {
   font-weight: normal;
   margin: 1em;
+  text-align: center;
 }
 
 .game-comment-form {
   display: grid;
   padding: 20px;
-  border-top: solid grey;
+}
+
+.form-title {
+  margin: 10px 0;
+  font-size: 18px;
 }
 
 .game-detail-comments {
@@ -166,19 +170,24 @@ button {
 
 .game-comment-user {
   padding-right: 10px;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 #comment_box {
   width: 400px;
   height: 50px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 2%;
 }
 
 .status-form {
   display: flex;
   justify-content: center;
-  margin: 1em;
+  /* margin: 1em; */
   padding-top: 7px;
-  padding-bottom: 20px;
+  padding-bottom: 3rem;
 }
 
 .status-form label {
