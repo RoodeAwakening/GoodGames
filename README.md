@@ -153,7 +153,7 @@ API Route Example Usage:
 
 ### User Game Status Persistance
 
-Depending on how a user has a specific game catorized in their game center, we wanted the chosen (red) status button to persist when they navigate back to that specific game page. This required figuring out a solution to prevent the previous game status after the user had changed that status.
+Depending on how a user has a specific game categorized in their game center, we wanted the chosen (red) status button to persist when they navigate to and from that specific game page. This required figuring out a solution to prevent the previous game status from persisting after the user had changed that status.
 
 ![gameStatuses](public/images/game-status-persistance.png)
 
