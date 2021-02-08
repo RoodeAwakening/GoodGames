@@ -73,11 +73,6 @@
 </br>
 ![homepage-screenshot](public/images/games-homepage.png)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`RoodeAwakening`, `GoodGames`, `twitter_handle`, `email`, `project_title`, `project_description`
-
-
 ### Built With
 
 * [JavaScript]()
