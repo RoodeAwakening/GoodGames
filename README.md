@@ -139,7 +139,28 @@ Here is everything we need you to do to get started with GoodGames.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
+## Obstacles
 
+### Rating API
+
+We noticed that we needed to calculate the user rating for each game in a number of places, so we decided it would be best to implement a calcRating helper function. This allows us to keep our code clean and precise.
+
+Helper Function (calcRating):
+<br>
+</br>
+![helperFunc](public/images/calcrating-helper.png)
+<br>
+</br>
+API Route Example Usage:
+<br>
+</br>
+![ratingAPI](public/images/rating-api.png)
+
+### User Game Status Persistance
+
+Depending on how a user has a specific game catorized in their game center, we wanted the chosen (red) status button to persist when they navigate back to that specific game page. This required figuring out a solution to prevent the previous game status after the user had changed that status.
+
+![gameStatuses](public/images/game-status-persistance.png)
 
 <!-- ROADMAP -->
 ## Roadmap
