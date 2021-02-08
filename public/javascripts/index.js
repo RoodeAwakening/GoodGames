@@ -64,7 +64,6 @@ window.addEventListener("load", (event) => {
                 body: JSON.stringify({ gameId, status }),
             });
             const data = await res.json();
-
             const nonTargets = statuses.filter(status => status != data.gameStatus.status)
             const nonTarget1 = document.getElementById(`${nonTargets[0]}-${data.gameStatus.gameId}`)
             const nonTarget2 = document.getElementById(`${nonTargets[1]}-${data.gameStatus.gameId}`)

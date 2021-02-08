@@ -10,17 +10,17 @@ const { logoutUser } = require('../auth');
 router.post('/:id/ratings', asyncHandler (async (req, res) => {
   const userId = req.session.auth.userId;
   const { gameId, yesOrNoVote } = req.body;
-  const checkRating = await db.Rating.findOne({ where: { userId, gameId }})
+  const checkRating = await db.Rating.findOne({ where: { userId, gameId }});
 
   if (checkRating !== null) {
     checkRating.destroy();
   }
-  await db.Rating.create({ userId, gameId, yesOrNoVote })
+  await db.Rating.create({ userId, gameId, yesOrNoVote });
   const allRatings = await db.Rating.findAll({ where: { gameId } });
   let newRating = await calcRating(allRatings);
 
-  res.json({ newRating })
-}))
+  res.json({ newRating });
+}));
 
 router.post("/:id/statuses", asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
