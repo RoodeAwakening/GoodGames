@@ -8,7 +8,7 @@ const calcRating = async (allRatings) => {
     let newRating;
 
     let total = 0;
-    for (let i = 0; i < allRatings.length; i++){
+    for (let i = 0; i < allRatings.length; i++) {
         const rating = allRatings[i]
         if (rating.yesOrNoVote) {
             total+=1;
